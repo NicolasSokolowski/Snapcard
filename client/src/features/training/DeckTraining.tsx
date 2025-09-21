@@ -96,7 +96,7 @@ function DeckTraining() {
   }, [cardsLeft, cardsToUpdate, dispatch]);
 
   return (
-    <div className="relative flex size-full flex-col items-center justify-center bg-primary">
+    <div className="relative flex min-h-dvh flex-col items-center justify-center bg-primary">
       {cardIndex < cards.length && (
         <>
           <div className="flex w-full">
