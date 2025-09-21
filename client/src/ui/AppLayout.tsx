@@ -7,7 +7,7 @@ function AppLayout() {
   return (
     <div className="flex h-screen-dvh flex-col">
       <LastPathSaver />
-      <main className="scrollbar-hide flex-1 overflow-y-auto">
+      <main className="scrollbar-hide flex-1 overflow-y-auto bg-primary">
         <Outlet />
       </main>
       <Footer />
