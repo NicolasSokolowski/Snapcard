@@ -2,5 +2,7 @@
   "create": "Create",
   "modify": "Modify",
   "delete": "Delete",
-  "language": "Language :"
+  "language": "Language :",
+  "tos": "T&C",
+  "aboutUs": "About us"
 }
