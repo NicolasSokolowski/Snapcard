@@ -6,6 +6,7 @@ import Error from "../../ui/Error";
 import { useTranslation } from "react-i18next";
 import { handleApiError } from "../../helpers/handleApiError";
 import { createHandleChange } from "../../helpers/createHandleChange";
+import i18next from "i18next";
 
 const initialState = {
   currentPassword: "",
@@ -98,7 +99,11 @@ function PasswordForm({ onCancel }: onCancelProp) {
     }
 
     try {
-      await axiosInstance.patch("/profile/changepw", passwordData);
+      await axiosInstance.patch("/profile/changepw", passwordData, {
+        headers: {
+          "Accept-Language": i18next.language
+        }
+      });
       setPasswordHasBeenChanged(true);
     } catch (err: unknown) {
       const parsedError = handleApiError(err, t);
@@ -112,12 +117,12 @@ function PasswordForm({ onCancel }: onCancelProp) {
     >
       <div className="flip-card-front">
         <div className="mb-6 flex size-full flex-col rounded-lg bg-tertiary shadow-custom-light lg:mx-4">
-          <h3 className="m-4 text-center font-patua text-2xl text-textPrimary">
+          <h3 className="m-4 hidden text-center font-patua text-xl text-textPrimary sm:block sm:text-2xl">
             {t("auth:buttons.edit-password")}
           </h3>
           <form
             onSubmit={handleSubmit()}
-            className="mx-12 flex flex-1 flex-col justify-center"
+            className="mx-12 flex flex-1 translate-y-2 flex-col justify-center sm:translate-y-0"
           >
             <label
               htmlFor="currentPassword"
@@ -128,7 +133,7 @@ function PasswordForm({ onCancel }: onCancelProp) {
             <input
               id="currentPassword"
               type="password"
-              className={`${error.fields?.includes("currentPassword") ? "ring-2 ring-error" : ""} my-2 h-8 rounded-lg pl-3 font-patua text-sm text-textPrimary shadow-inner-strong focus:outline-none focus:ring-2 focus:ring-primary`}
+              className={`${error.fields?.includes("currentPassword") ? "ring-2 ring-error" : ""} my-2 h-8 rounded-lg pl-3 font-patua text-xs text-textPrimary shadow-inner-strong focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm`}
               value={passwordData.currentPassword}
               onChange={(e) => handleChange(e)}
               autoComplete="off"
@@ -142,7 +147,7 @@ function PasswordForm({ onCancel }: onCancelProp) {
             <input
               id="newPassword"
               type="password"
-              className={`${error.fields?.includes("newPassword") ? "ring-2 ring-error" : ""} my-2 h-8 rounded-lg pl-3 font-patua text-sm text-textPrimary shadow-inner-strong focus:outline-none focus:ring-2 focus:ring-primary`}
+              className={`${error.fields?.includes("newPassword") ? "ring-2 ring-error" : ""} my-2 h-8 rounded-lg pl-3 font-patua text-xs text-textPrimary shadow-inner-strong focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm`}
               value={passwordData.newPassword}
               onChange={(e) => handleChange(e)}
               autoComplete="off"
@@ -156,7 +161,7 @@ function PasswordForm({ onCancel }: onCancelProp) {
             <input
               id="confirmNewPassword"
               type="password"
-              className={`${error.fields?.includes("confirmNewPassword") ? "ring-2 ring-error" : ""} my-2 h-8 rounded-lg pl-3 font-patua text-sm text-textPrimary shadow-inner-strong focus:outline-none focus:ring-2 focus:ring-primary`}
+              className={`${error.fields?.includes("confirmNewPassword") ? "ring-2 ring-error" : ""} my-2 h-8 rounded-lg pl-3 font-patua text-xs text-textPrimary shadow-inner-strong focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm`}
               value={passwordData.confirmNewPassword}
               onChange={(e) => handleChange(e)}
               autoComplete="off"
@@ -173,10 +178,10 @@ function PasswordForm({ onCancel }: onCancelProp) {
       {passwordHasBeenChanged && (
         <div className="flip-card-back">
           <div className="mb-6 flex size-full flex-col rounded-lg bg-tertiary font-patua text-textPrimary shadow-custom-light lg:mx-4">
-            <h3 className="m-4 text-center text-2xl">
+            <h3 className="m-4 text-center text-xl sm:text-2xl">
               {t("auth:buttons.edit-password")}
             </h3>
-            <span className="mt-2 text-center text-xl">
+            <span className="mt-2 text-center text-lg sm:text-xl">
               {t("auth:success")}
             </span>
             <p className="mx-12 my-8 break-words text-center">
