@@ -68,14 +68,14 @@ function UsernameForm({ onCancel }: onCancelProp) {
       >
         <label
           htmlFor="username"
-          className="ml-1 font-patua text-base text-textPrimary sm:text-xl"
+          className="ml-1 font-patua text-textPrimary sm:text-xl"
         >
           {t("auth:newUsername")}
         </label>
         <input
           id="username"
           type="text"
-          className={`${error.fields?.includes("username") ? "ring-2 ring-error" : ""} mb-5 mt-2 h-12 rounded-lg pl-3 font-patua text-lg text-textPrimary shadow-inner-strong focus:outline-none focus:ring-2 focus:ring-primary`}
+          className={`${error.fields?.includes("username") ? "ring-2 ring-error" : ""} mb-5 mt-2 h-12 rounded-lg pl-3 font-patua text-textPrimary shadow-inner-strong focus:outline-none focus:ring-2 focus:ring-primary sm:text-lg`}
           value={user.username}
           onChange={(e) => handleChange(e)}
           autoComplete="off"
