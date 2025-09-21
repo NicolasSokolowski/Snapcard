@@ -58,8 +58,8 @@ function UsernameForm({ onCancel }: onCancelProp) {
   };
 
   return (
-    <div className="mb-6 flex  size-full flex-col justify-start rounded-lg bg-tertiary shadow-custom-light lg:mx-4">
-      <h3 className="m-4 text-center font-patua text-2xl text-textPrimary">
+    <div className="mb-6 flex size-full flex-col justify-start rounded-lg bg-tertiary shadow-custom-light lg:mx-4">
+      <h3 className="m-4 text-center font-patua text-xl text-textPrimary sm:text-2xl">
         {t("auth:buttons.edit-username")}
       </h3>
       <form
@@ -68,7 +68,7 @@ function UsernameForm({ onCancel }: onCancelProp) {
       >
         <label
           htmlFor="username"
-          className="ml-1 font-patua text-xl text-textPrimary"
+          className="ml-1 font-patua text-base text-textPrimary sm:text-xl"
         >
           {t("auth:newUsername")}
         </label>
