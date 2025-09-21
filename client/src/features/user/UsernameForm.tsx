@@ -58,8 +58,8 @@ function UsernameForm({ onCancel }: onCancelProp) {
   };
 
   return (
-    <div className="mb-6 flex  size-full flex-col justify-start rounded-lg bg-tertiary shadow-custom-light lg:mx-4">
-      <h3 className="m-4 text-center font-patua text-2xl text-textPrimary">
+    <div className="mb-6 flex size-full flex-col justify-start rounded-lg bg-tertiary shadow-custom-light lg:mx-4">
+      <h3 className="m-4 text-center font-patua text-xl text-textPrimary sm:text-2xl">
         {t("auth:buttons.edit-username")}
       </h3>
       <form
@@ -68,14 +68,14 @@ function UsernameForm({ onCancel }: onCancelProp) {
       >
         <label
           htmlFor="username"
-          className="ml-1 font-patua text-xl text-textPrimary"
+          className="ml-1 font-patua text-textPrimary sm:text-xl"
         >
           {t("auth:newUsername")}
         </label>
         <input
           id="username"
           type="text"
-          className={`${error.fields?.includes("username") ? "ring-2 ring-error" : ""} mb-5 mt-2 h-12 rounded-lg pl-3 font-patua text-lg text-textPrimary shadow-inner-strong focus:outline-none focus:ring-2 focus:ring-primary`}
+          className={`${error.fields?.includes("username") ? "ring-2 ring-error" : ""} mb-5 mt-2 h-12 rounded-lg pl-3 font-patua text-textPrimary shadow-inner-strong focus:outline-none focus:ring-2 focus:ring-primary sm:text-lg`}
           value={user.username}
           onChange={(e) => handleChange(e)}
           autoComplete="off"

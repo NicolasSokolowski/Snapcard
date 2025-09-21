@@ -47,10 +47,12 @@ interface Resources {
     myCards: "My cards";
   };
   common: {
+    aboutUs: "About us";
     create: "Create";
     delete: "Delete";
     language: "Language :";
     modify: "Modify";
+    tos: "T&C";
   };
   deck: {
     deckDeleteNoCards: "Do you really want to delete this deck ?";

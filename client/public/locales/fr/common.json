@@ -2,5 +2,7 @@
   "create": "Créer",
   "modify": "Modifier",
   "delete": "Supprimer",
-  "language": "Langue :"
+  "language": "Langue :",
+  "tos": "CGU",
+  "aboutUs": "À propos"
 }

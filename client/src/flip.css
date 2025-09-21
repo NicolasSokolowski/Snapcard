@@ -221,9 +221,19 @@
 .flip-training {
   background-color: transparent;
   perspective: 1000px;
-  width: 24rem;
-  height: 24rem;
+  width: 20rem;
+  height: 20rem;
   position: relative;
+}
+
+@media screen and (min-width: 640px) {
+  .flip-training {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 24rem;
+    height: 24rem;
+    position: relative;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -252,6 +262,16 @@
   width: 22.2rem;
   height: 22.2rem;
   position: relative;
+}
+
+@media screen and (max-width: 575px) {
+  .flip-profile {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 20rem;
+    height: 20rem;
+    position: relative;
+  }
 }
 
 .flip-profile.flip .flip-box-inner {

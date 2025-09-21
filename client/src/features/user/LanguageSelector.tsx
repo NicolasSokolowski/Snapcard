@@ -12,7 +12,7 @@ function LanguageSelector() {
 
   return (
     <div className="flex justify-center lg:justify-start">
-      <div className="relative mb-20 flex h-16 w-96 font-patua text-xl text-textPrimary lg:ml-20">
+      <div className="relative mb-20 flex h-16 w-80 font-patua text-xl text-textPrimary sm:w-96 lg:ml-20">
         <div className="flex w-1/3 items-center justify-center">
           <label htmlFor="language">{t("language")}</label>
         </div>

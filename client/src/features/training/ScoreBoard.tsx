@@ -37,11 +37,11 @@ function ScoreBoard({ cards, cardsToUpdate, onReplay }: ScoreBoardProps) {
     total > 0 ? Math.round(((easyCount + mediumCount / 2) / total) * 100) : 0;
 
   return (
-    <div className="flex w-4/5 flex-col rounded-lg bg-tertiary font-patua text-textPrimary shadow-custom-light">
-      <span className="p-8 text-center text-4xl md:text-5xl lg:text-6xl xl:p-14 xl:text-7xl">
+    <div className="flex h-full w-4/5 flex-col rounded-lg bg-tertiary font-patua text-textPrimary shadow-custom-light">
+      <span className="p-8 text-center text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:p-14 xl:text-7xl">
         {t("scoreBoard.scoreBoard")}
       </span>
-      <div className="flex flex-col items-center justify-between text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+      <div className="flex flex-col items-center justify-between text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
         <div className="flex w-full justify-between">
           <div className="mx-8 p-1 sm:mx-10 sm:p-2 md:mx-16 lg:mx-20 xl:mx-24">
             {t("scoreBoard.studiedCards")}
@@ -101,18 +101,18 @@ function ScoreBoard({ cards, cardsToUpdate, onReplay }: ScoreBoardProps) {
       </div>
       <div className="mb-5 flex h-24 w-full items-center justify-center gap-8 sm:gap-24 md:h-28 md:gap-32 lg:h-32 lg:gap-36 xl:gap-44">
         <button
-          className="h-12 w-36 rounded-full bg-secondary shadow-custom-light md:h-14 lg:h-16 lg:w-52"
+          className="h-12 w-28 rounded-full bg-secondary shadow-custom-light sm:w-36 md:h-14 lg:h-16 lg:w-52"
           onClick={onReplay}
         >
-          <span className="text-2xl text-tertiary md:text-2xl lg:text-4xl">
+          <span className="text-xl text-tertiary sm:text-2xl md:text-2xl lg:text-4xl">
             {t("buttons.replay")}
           </span>
         </button>
         <button
-          className="h-12 w-36 rounded-full bg-secondary shadow-custom-light md:h-14 lg:h-16 lg:w-52"
+          className="h-12 w-28 rounded-full bg-secondary shadow-custom-light sm:w-36 md:h-14 lg:h-16 lg:w-52"
           onClick={() => navigate("/user/training/mode")}
         >
-          <span className="text-2xl text-tertiary md:text-2xl lg:text-4xl">
+          <span className="text-xl text-tertiary sm:text-2xl md:text-2xl lg:text-4xl">
             {t("buttons.quit")}
           </span>
         </button>

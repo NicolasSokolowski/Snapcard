@@ -90,8 +90,8 @@ function EmailForm({ onCancel }: onCancelProp) {
       className={`flip-card-inner ${isNewEmailAvailable ? "flip-vertical" : ""}`}
     >
       <div className="flip-card-front">
-        <div className="relative mb-6 flex  size-full flex-col justify-start rounded-lg bg-tertiary shadow-custom-light lg:mx-4">
-          <h3 className="m-4 text-center font-patua text-2xl text-textPrimary">
+        <div className="relative mb-6 flex size-full flex-col justify-start rounded-lg bg-tertiary shadow-custom-light lg:mx-4">
+          <h3 className="m-4 text-center font-patua text-xl text-textPrimary sm:text-2xl">
             {t("auth:buttons.edit-email")}
           </h3>
           <form
@@ -100,14 +100,14 @@ function EmailForm({ onCancel }: onCancelProp) {
           >
             <label
               htmlFor="newEmail"
-              className="ml-1 font-patua text-xl text-textPrimary"
+              className="ml-1 font-patua text-textPrimary sm:text-xl"
             >
               {t("auth:newEmail")}
             </label>
             <input
               id="newEmail"
               type="text"
-              className={`${error.fields?.includes("newEmail") ? "ring-2 ring-error" : ""} mb-5 mt-2 h-12 rounded-lg pl-3 font-patua text-lg text-textPrimary shadow-inner-strong focus:outline-none focus:ring-2 focus:ring-primary`}
+              className={`${error.fields?.includes("newEmail") ? "ring-2 ring-error" : ""} mb-5 mt-2 h-12 rounded-lg pl-3 font-patua text-textPrimary shadow-inner-strong focus:outline-none focus:ring-2 focus:ring-primary sm:text-lg`}
               value={user.newEmail}
               onChange={(e) => handleChange(e)}
               autoComplete="off"
@@ -128,7 +128,7 @@ function EmailForm({ onCancel }: onCancelProp) {
           >
             <div className="flip-card-back-face">
               <div className="mb-6 flex size-full flex-col justify-start rounded-lg bg-tertiary shadow-custom-light lg:mx-4">
-                <h3 className="m-4 text-center font-patua text-2xl text-textPrimary">
+                <h3 className="m-4 text-center font-patua text-xl text-textPrimary sm:text-2xl">
                   {t("buttons.edit-email")}
                 </h3>
                 <CodeVerificationForm
@@ -145,14 +145,14 @@ function EmailForm({ onCancel }: onCancelProp) {
             </div>
             <div className="flip-card-back-of-back">
               <div className="mb-6 flex size-full flex-col rounded-lg bg-tertiary font-patua text-textPrimary shadow-custom-light lg:mx-4">
-                <h3 className="m-4 text-center text-2xl">
+                <h3 className="m-4 text-center text-xl sm:text-2xl">
                   {t("auth:buttons.edit-email")}
                 </h3>
                 <div className="flex h-full flex-col items-center justify-center">
-                  <span className="mt-2 text-center text-xl">
+                  <span className="mt-2 text-center text-lg sm:text-xl">
                     {t("auth:success")}
                   </span>
-                  <p className="mx-12 my-8 break-words text-center text-lg">
+                  <p className="mx-12 my-8 break-words text-center sm:text-lg">
                     {t("auth:emailChangedConfirmationMsg")}
                   </p>
                 </div>

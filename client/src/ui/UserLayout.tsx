@@ -14,12 +14,12 @@ function UserLayout() {
     <div className="relative h-screen-dvh w-full sm:flex">
       <div className="sticky top-0 z-10 flex w-full flex-col justify-center rounded-sm bg-tertiary shadow-right sm:z-50 sm:w-72 sm:max-w-80 md:w-80">
         <NavBar />
-        <div className="sm:hidden">
+        <div className="sticky top-0 z-10 sm:hidden">
           <SearchBar setItemsList={setItemsList} />
         </div>
       </div>
       <div className="scrollbar-hide size-full overflow-y-auto bg-primary">
-        <div className="hidden sm:block">
+        <div className="sticky top-0 z-10 hidden sm:block">
           <SearchBar setItemsList={setItemsList} />
         </div>
         <Outlet context={{ itemsList, setItemsList }} />

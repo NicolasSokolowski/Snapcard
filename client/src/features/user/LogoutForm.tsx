@@ -26,14 +26,14 @@ function LogoutForm({ onCancel }: onCancelProp) {
 
   return (
     <div className="mb-6 flex size-full flex-col justify-start rounded-lg bg-tertiary shadow-custom-light lg:mx-4">
-      <h3 className="m-4 text-center font-patua text-2xl text-textPrimary">
+      <h3 className="m-4 text-center font-patua text-xl text-textPrimary sm:text-2xl">
         {t("auth:buttons.logout")}
       </h3>
       <form
         onSubmit={handleSubmit()}
         className="mx-12 flex flex-1 flex-col justify-center gap-5"
       >
-        <p className="text-center font-patua text-xl text-textPrimary">
+        <p className="text-center font-patua text-lg text-textPrimary sm:text-xl">
           {t("auth:logoutCheck")}
         </p>
         <ChoiceButton width="24" gap="gap-20" onCancel={onCancel} />

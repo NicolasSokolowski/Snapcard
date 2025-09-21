@@ -102,7 +102,7 @@ function CodeVerificationForm(props: CodeVerificationProps) {
         className="mx-12 flex flex-1 flex-col justify-center"
         onSubmit={handleCodeSubmit}
       >
-        <div className="ml-1 text-center font-patua text-xl text-textPrimary">
+        <div className="ml-1 text-center font-patua text-textPrimary sm:text-xl">
           {t("code")}
         </div>
         <div className="mt-4 flex justify-center gap-2 font-patua">
