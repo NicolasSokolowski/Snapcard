@@ -75,11 +75,11 @@ function UserProfile() {
                   setIsEditing={setIsEditing}
                   visibleForm={visibleForm}
                   setVisibleForm={setVisibleForm}
-                  className="mb-4 w-96 sm:block lg:hidden"
+                  className="mb-4 size-80 sm:block lg:hidden"
                 />
               )}
               <button
-                className={`h-16 w-96 animate-pop rounded-md shadow-custom-light transition-all duration-500 ${
+                className={`h-16 w-80 animate-pop rounded-md shadow-custom-light transition-all duration-500 sm:w-96 ${
                   visibleForm === key
                     ? "bg-tertiary text-textPrimary"
                     : "bg-secondary text-white"
