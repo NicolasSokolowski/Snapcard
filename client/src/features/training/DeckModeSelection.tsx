@@ -46,7 +46,7 @@ function DeckModeSelection() {
 
   return (
     <div className="flex size-full flex-col">
-      <h1 className="flex items-center justify-center pb-10 pt-24 font-patua text-4xl text-textPrimary sm:p-10 sm:pb-12 md:py-14 md:text-5xl lg:p-16 lg:pb-20 lg:text-6xl xl:p-24 xl:text-7xl">
+      <h1 className="flex items-center justify-center py-10 font-patua text-4xl text-textPrimary sm:p-10 sm:pb-12 md:py-14 md:text-5xl lg:p-16 lg:pb-20 lg:text-6xl xl:p-24 xl:text-7xl">
         {t("selectDeck")}
       </h1>
       <div className="grid grid-cols-[repeat(auto-fit,_20rem)] justify-center gap-8 pb-20">
