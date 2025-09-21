@@ -72,27 +72,27 @@ function SearchBar({
       className={`${!filterable && "hidden"} relative z-10 flex h-14 w-full items-center justify-center bg-white shadow-bottom sm:top-0`}
     >
       {cardsLocation && (
-        <div className="absolute left-0 ml-4 flex max-w-64 items-center justify-center sm:ml-8 sm:w-[7.5rem] lg:w-52 xl:w-64">
+        <div className="absolute left-0 ml-4 flex max-w-64 items-center justify-center sm:ml-8 sm:w-28 lg:w-52 xl:w-64">
           <div className="flex h-10 w-full items-center rounded-full sm:bg-primary sm:shadow-inner-strong">
             {deck ? (
               <span className="font-patua text-sm text-textPrimary sm:ml-5 lg:text-lg">
                 {deck.name}
               </span>
             ) : (
-              <span className="font-patua text-sm text-textPrimary sm:ml-2 lg:ml-5 lg:text-lg">
+              <span className="font-patua text-sm text-textPrimary sm:ml-3 lg:ml-5 lg:text-lg">
                 {t("allCards")}
               </span>
             )}
           </div>
         </div>
       )}
-      <div className="w-1/3 min-w-36">
-        <div className="relative my-2 flex h-10 w-full max-w-96 items-center justify-between rounded-full bg-tertiary shadow-inner-strong">
+      <div className="w-1/4 min-w-40">
+        <div className="relative my-2 flex h-10 w-full max-w-80 items-center rounded-full bg-tertiary shadow-inner-strong">
           <input
-            className="ml-5 bg-transparent font-patua text-textPrimary focus:outline-none"
+            className="ml-5 w-24 truncate bg-transparent font-patua text-textPrimary focus:outline-none lg:w-32 xl:w-48 2xl:w-64"
             value={searchedItem}
             onChange={(e) => setSearchedItem(e.target.value)}
-          ></input>
+          />
           <img
             src="/images/glass.png"
             alt="Magnyfying glass logo"
