@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Card } from "../../store/card/cardSlice";
 import CardModification from "./CardModification";
 import CardDeletion from "./CardDeletion";
+import { useResponsiveHeight } from "../../helpers/useResponsiveHeight";
 
 export interface CardProps {
   card: Card;
@@ -13,6 +14,10 @@ function CardDetails({ card }: CardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [activeAction, setActiveAction] = useState<Action>("none");
   const [visibleAction, setVisibleAction] = useState<Action>("none");
+  const frontRef = useRef<HTMLDivElement>(null);
+  const backRef = useRef<HTMLDivElement>(null);
+  const showFrontImage = useResponsiveHeight(frontRef, 95, 70, 70);
+  const showBackImage = useResponsiveHeight(backRef, 95, 70, 70);
 
   const isEdit = activeAction.startsWith("edit");
 
@@ -45,12 +50,15 @@ function CardDetails({ card }: CardProps) {
           >
             <div className="flip-card-front">
               <div
-                className="relative flex size-full flex-col items-center justify-between rounded-md bg-tertiary bg-[url('/images/card.png')] bg-[length:60%] bg-center bg-no-repeat shadow-custom-light"
+                className={`relative flex size-full flex-col items-center rounded-md bg-tertiary ${showFrontImage ? "justify-between bg-[url('/images/card.png')] bg-[length:55%] bg-center bg-no-repeat" : "justify-end"} shadow-custom-light`}
                 onClick={() => {
                   if (!isEdit) setIsFlipped(true);
                 }}
               >
-                <h3 className="w-full break-words pt-3 text-center font-patua text-2xl text-textPrimary xs:text-xl">
+                <h3
+                  className={`w-full break-keep px-5 text-center font-patua text-2xl text-textPrimary xs:text-xl sm:text-lg ${!showFrontImage ? "absolute top-24 xs:top-16" : "pt-4 sm:pt-3"}`}
+                  ref={frontRef}
+                >
                   {card.front}
                 </h3>
                 <div className="flex h-16 w-full justify-between">
@@ -120,12 +128,15 @@ function CardDetails({ card }: CardProps) {
               >
                 <div className="flip-face flip-face-front">
                   <div
-                    className="relative flex size-full flex-col items-center justify-between rounded-md bg-tertiary bg-[url('/images/cardback.png')] bg-[length:60%] bg-center bg-no-repeat shadow-custom-light"
+                    className={`relative flex size-full flex-col items-center rounded-md bg-tertiary ${showBackImage ? "justify-between bg-[url('/images/cardback.png')] bg-[length:55%] bg-center bg-no-repeat" : "justify-end"} shadow-custom-light`}
                     onClick={() => {
                       if (!isEdit) setIsFlipped(false);
                     }}
                   >
-                    <h3 className="w-full break-words pt-3 text-center font-patua text-2xl text-textPrimary xs:text-xl">
+                    <h3
+                      className={`w-full break-keep px-5 text-center font-patua text-2xl text-textPrimary xs:text-xl sm:px-2 sm:text-lg ${!showBackImage ? "absolute top-24 xs:top-16" : "pt-4 sm:pt-3"}`}
+                      ref={backRef}
+                    >
                       {card.back}
                     </h3>
                     <div className="flex h-16 w-full justify-between">
