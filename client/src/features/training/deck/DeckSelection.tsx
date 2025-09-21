@@ -29,10 +29,10 @@ function DeckSelection() {
 
   return (
     <div className="scrollbar-hide mt-14 overflow-y-auto bg-primary p-8 sm:mt-0">
-      <div className="mb-8 grid grid-cols-[repeat(auto-fit,_15rem)] gap-8">
+      <div className="mb-8 grid grid-cols-[repeat(auto-fit,_20rem)] justify-center gap-8 xs:grid-cols-[repeat(auto-fit,_15rem)] xs:justify-normal">
         <Link
           to="/user/training/mode"
-          className="flex size-60 animate-pop flex-col items-center justify-center rounded-md bg-tertiary shadow-custom-light"
+          className="flex size-80 animate-pop flex-col items-center justify-center rounded-md bg-tertiary shadow-custom-light sm:size-60"
         >
           <span className="font-patua text-9xl text-secondary">&lt;</span>
         </Link>
