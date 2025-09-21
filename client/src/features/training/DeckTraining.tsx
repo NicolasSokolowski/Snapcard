@@ -96,11 +96,11 @@ function DeckTraining() {
   }, [cardsLeft, cardsToUpdate, dispatch]);
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col items-center justify-center bg-primary">
+    <div className="relative flex size-full flex-col items-center justify-center bg-primary">
       {cardIndex < cards.length && (
         <>
           <div className="flex w-full">
-            <div className="absolute left-0 top-0 flex h-32 w-full justify-between p-6 px-14 sm:p-8 sm:pt-6 md:pt-7 lg:pt-12 ">
+            <div className="absolute left-0 top-0 flex h-32 w-full justify-between p-6 sm:p-8 sm:pt-6 md:pt-7 lg:pt-12 ">
               <span className="mt-2 font-patua text-xl text-textPrimary sm:mx-2 sm:text-2xl lg:mt-4 lg:text-2xl xl:text-3xl">
                 {t("cardsLeftCount", { count: cardsLeft })}
               </span>
@@ -123,7 +123,7 @@ function DeckTraining() {
                     className="flip-training-a flex flex-col rounded-lg bg-tertiary bg-[url('/images/card.png')] bg-[length:60%] bg-center bg-no-repeat shadow-custom-light"
                     onClick={() => handleFlip()}
                   >
-                    <span className="mt-5 flex w-full justify-center font-patua text-3xl md:text-4xl lg:text-5xl text-textPrimary">
+                    <span className="mt-5 flex w-full justify-center font-patua text-3xl text-textPrimary md:text-4xl lg:text-5xl">
                       {currentCard.front}
                     </span>
                   </div>
@@ -131,7 +131,7 @@ function DeckTraining() {
                     className="flip-training-b flex flex-col rounded-lg bg-tertiary bg-[url('/images/cardback.png')] bg-[length:60%] bg-center bg-no-repeat shadow-custom-light"
                     onClick={() => handleFlip()}
                   >
-                    <span className="mt-5 flex w-full justify-center font-patua text-3xl md:text-4xl lg:text-5xl text-textPrimary">
+                    <span className="mt-5 flex w-full justify-center font-patua text-3xl text-textPrimary md:text-4xl lg:text-5xl">
                       {currentCard.back}
                     </span>
                   </div>
