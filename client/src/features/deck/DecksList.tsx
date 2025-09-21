@@ -8,15 +8,18 @@ import { useOutletContext } from "react-router-dom";
 import { Deck } from "../../store/deck/deckSlice";
 import { sortDecks } from "../../helpers/sortDecks";
 
+interface UserLayoutContext {
+  itemsList: Deck[];
+}
+
 function DecksList() {
   const dispatch = useAppDispatch();
-  const decks = useAppSelector((state) => state.deck.decks);
   const hasBeenFetchedOnce = useAppSelector(
     (state) => state.deck.hasBeenFetchedOnce
   );
 
-  const filteredItems = useOutletContext<Deck[]>() || decks;
-  const sortedDecks = sortDecks(filteredItems);
+  const { itemsList } = useOutletContext<UserLayoutContext>();
+  const sortedDecks = sortDecks(itemsList);
 
   useEffect(() => {
     if (!hasBeenFetchedOnce) {

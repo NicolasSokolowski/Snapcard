@@ -1,23 +1,19 @@
 import DeckPicker from "./DeckPicker";
-import { Link, useLocation, useOutletContext } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { Deck } from "../../../store/deck/deckSlice";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { sortDecks } from "../../../helpers/sortDecks";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { getDecks } from "../../../store/deck/deckThunk";
 import { getAllCardsByUserEmail } from "../../../store/card/cardThunks";
 
-interface LocationState {
-  decks: Deck[];
+interface UserLayoutContext {
+  itemsList: Deck[];
 }
 
 function DeckSelection() {
-  const location = useLocation();
-  const state = location.state as LocationState;
-  const decks = useMemo(() => state?.decks ?? [], [state?.decks]);
-
-  const filteredItems = useOutletContext<Deck[]>() || decks;
-  const sortedDecks = sortDecks(filteredItems);
+  const { itemsList } = useOutletContext<UserLayoutContext>();
+  const sortedDecks = sortDecks(itemsList);
   const dispatch = useAppDispatch();
 
   const hasBeenFetchedOnce = useAppSelector(

@@ -9,7 +9,6 @@ import DeckSelection from "./features/training/deck/DeckSelection";
 import DeckTraining from "./features/training/DeckTraining";
 import UserProfile from "./features/user/UserProfile";
 import ProtectedRoute from "./ui/ProtectedRoute";
-import SearchBarLayout from "./ui/SearchBarLayout";
 import AllCardsList from "./features/card/AllCardsList";
 import "./i18n";
 import { Suspense } from "react";
@@ -32,26 +31,20 @@ const router = createBrowserRouter([
             element: <UserLayout />,
             children: [
               {
-                path: "",
-                element: <SearchBarLayout />,
-                children: [
-                  {
-                    path: "decks",
-                    element: <DecksList />
-                  },
-                  {
-                    path: "decks/:deckId/cards",
-                    element: <CardsList />
-                  },
-                  {
-                    path: "training/decks",
-                    element: <DeckSelection />
-                  },
-                  {
-                    path: "cards",
-                    element: <AllCardsList />
-                  }
-                ]
+                path: "decks",
+                element: <DecksList />
+              },
+              {
+                path: "decks/:deckId/cards",
+                element: <CardsList />
+              },
+              {
+                path: "training/decks",
+                element: <DeckSelection />
+              },
+              {
+                path: "cards",
+                element: <AllCardsList />
               },
               {
                 path: "training/mode",

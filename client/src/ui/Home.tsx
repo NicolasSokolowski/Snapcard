@@ -18,7 +18,7 @@ function Home() {
   });
 
   return (
-    <div className="flex min-h-full flex-col items-center justify-start bg-primary">
+    <div className="flex flex-col items-center justify-start bg-primary">
       <div className="mx-4 sm:w-2/3">
         <div className="mt-5 flex justify-center sm:gap-6">
           <img
@@ -27,7 +27,7 @@ function Home() {
             className="h-36 object-contain sm:h-44 lg:h-56 xl:h-64"
             draggable={false}
           />
-          <h1 className="flex items-center font-patua text-5xl text-tertiary sm:text-6xl lg:text-8xl xl:text-9xl">
+          <h1 className="flex -translate-x-4 items-center font-patua text-5xl text-tertiary sm:text-6xl lg:text-8xl xl:text-9xl">
             Snapcard
           </h1>
         </div>

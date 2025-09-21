@@ -12,7 +12,7 @@ function Footer() {
 
   return (
     <footer
-      className={`absolute bottom-0 right-0 flex h-10 w-full bg-white ${isTraining && "hidden"} shadow-inner-strong`}
+      className={`sticky bottom-0 right-0 flex h-10 w-full bg-white sm:absolute ${isTraining && "hidden"} shadow-inner-strong`}
     >
       <div className={`sm:w-96 ${isHome && "hidden"}`} />
       <div className="mx-10 flex w-full items-center justify-center gap-8 font-patua text-sm text-textPrimary sm:mx-20 sm:justify-between sm:gap-0 sm:text-base lg:text-lg">
