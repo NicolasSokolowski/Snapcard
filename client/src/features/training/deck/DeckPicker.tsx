@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { Deck } from "../../../store/deck/deckSlice";
 import { useAppSelector } from "../../../store/hooks";
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import { selectCardsByDeckId } from "../../../store/card/cardSelector";
 import { useTranslation } from "react-i18next";
+import { useResponsiveHeight } from "../../../helpers/useResponsiveHeight";
 
 export interface DeckProps {
   deck: Deck;
@@ -17,10 +18,17 @@ function DeckPicker({ deck }: DeckProps) {
   const cards = useAppSelector(selectDeckCards);
   const navigate = useNavigate();
   const { t } = useTranslation("training");
+  const ref = useRef<HTMLDivElement>(null);
+  const showImage = useResponsiveHeight(ref, 85, 64, 64);
 
   return (
-    <div className="flex size-80 animate-pop flex-col items-center justify-between rounded-md bg-tertiary bg-[url('/images/deck.png')] bg-cover pt-3 shadow-custom-light sm:size-60">
-      <h3 className="w-full break-keep px-2 text-center font-patua text-xl text-textPrimary sm:text-lg">
+    <div
+      className={`flex size-80 animate-pop flex-col items-center justify-between rounded-md bg-tertiary ${showImage ? "justify-between bg-[url('/images/deck.png')] bg-cover" : ""} pt-3 shadow-custom-light sm:size-60`}
+    >
+      <h3
+        ref={ref}
+        className="w-full break-keep px-2 text-center font-patua text-xl text-textPrimary sm:text-lg"
+      >
         {deck.name}
       </h3>
       <div className="flex h-16 w-full items-center justify-center">

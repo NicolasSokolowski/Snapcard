@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Deck } from "../../store/deck/deckSlice";
 import DeckModification from "./DeckModification";
 import DeckDeletion from "./DeckDeletion";
 import { useNavigate } from "react-router-dom";
+import { useResponsiveHeight } from "../../helpers/useResponsiveHeight";
 
 export interface DeckProps {
   deck: Deck;
@@ -14,6 +15,8 @@ function DeckDetails({ deck }: DeckProps) {
     "none"
   );
   const navigate = useNavigate();
+  const ref = useRef<HTMLDivElement>(null);
+  const showImage = useResponsiveHeight(ref, 85, 64, 64);
 
   const handleModifyClick = () => {
     if (flipSide === "left") {
@@ -42,15 +45,18 @@ function DeckDetails({ deck }: DeckProps) {
       <div className="flip-box-inner">
         <div className="flip-box-a">
           <div
-            className="flex size-full flex-col items-center justify-between rounded-md bg-tertiary bg-[url('/images/deck.png')] bg-cover pt-3 shadow-custom-light"
+            className={`flex size-full flex-col items-center rounded-md bg-tertiary pt-3 shadow-custom-light ${showImage ? "justify-between bg-[url('/images/deck.png')] bg-cover" : ""}`}
             onClick={() => navigate(`/user/decks/${deck.id}/cards`)}
           >
-            <div className="flex h-[15%] w-full">
-              <h3 className="w-full break-keep px-2 text-center font-patua text-xl text-textPrimary sm:text-lg">
+            <div className="flex w-full">
+              <h3
+                ref={ref}
+                className="w-full break-keep px-3 text-center font-patua text-xl text-textPrimary sm:text-lg"
+              >
                 {deck.name}
               </h3>
             </div>
-            <div className="flex h-16 w-full justify-between">
+            <div className="absolute bottom-0 flex h-16 w-full justify-between">
               <button
                 type="button"
                 onClick={(e) => {
