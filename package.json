@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "docker compose -f docker-compose-test.yml -p test_project run --rm server",
-    "prod": "docker compose -f docker-compose-prod up.yml --build",
+    "prod": "docker compose -f docker-compose-prod.yml up --build",
     "mobile": "docker compose -f docker-compose-mobile.yml up --build",
     "local": "docker compose up --build",
     "lint": "lint-staged",
