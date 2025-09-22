@@ -69,7 +69,7 @@ function SearchBar({
 
   return (
     <div
-      className={`${!filterable && "hidden"} relative z-10 flex h-14 w-full items-center justify-between bg-white shadow-bottom sm:top-0 sm:justify-center`}
+      className={`${!filterable && "hidden"} relative z-10 flex h-14 w-full items-center ${cardsLocation ? "justify-between" : "justify-center"} bg-white shadow-bottom sm:top-0 sm:justify-center`}
     >
       {cardsLocation && (
         <div className="ml-1.5 flex w-2/4 items-center justify-center sm:absolute sm:left-0 sm:ml-8 sm:w-1/4 sm:max-w-64">
