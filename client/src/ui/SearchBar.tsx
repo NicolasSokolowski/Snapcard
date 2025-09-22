@@ -90,7 +90,7 @@ function SearchBar({
         </div>
       )}
       <div className="mr-4 w-1/4 min-w-36 sm:mr-0">
-        <div className="relative my-2 flex h-10 w-full max-w-80 items-center rounded-full bg-tertiary shadow-inner-strong">
+        <div className="relative my-2 flex h-10 w-full max-w-80 animate-pop items-center rounded-full bg-tertiary shadow-inner-strong transition-all duration-300">
           <input
             className="ml-5 w-20 truncate bg-transparent font-patua text-textPrimary focus:outline-none lg:w-32 xl:w-48 2xl:w-64"
             value={searchedItem}
