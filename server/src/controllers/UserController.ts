@@ -353,9 +353,7 @@ export class UserController extends CoreController<
     } catch (err) {
       console.error(err);
       await this.datamapper.pool.query("ROLLBACK");
-      res
-        .status(400)
-        .json({ success: false, errors: [{ message: err.message }] });
+      throw err;
     }
   };
 
