@@ -23,7 +23,7 @@ function DeckPicker({ deck }: DeckProps) {
 
   return (
     <div
-      className={`flex size-80 animate-pop flex-col items-center justify-between rounded-md bg-tertiary ${showImage ? "justify-between bg-[url('/images/deck.png')] bg-cover" : ""} pt-3 shadow-custom-light sm:size-60`}
+      className={`flex size-80 animate-pop flex-col items-center justify-between rounded-md ${cards.length > 0 ? "bg-tertiary" : "bg-[repeating-linear-gradient(135deg,#e5e7eb_0px,#e5e7eb_20px,#d1d5db_20px,#d1d5db_40px)]"} ${showImage ? "justify-between bg-[url('/images/deck.png')] bg-cover" : ""} pt-3 shadow-custom-light sm:size-60`}
     >
       <h3
         ref={ref}
