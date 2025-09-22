@@ -69,10 +69,10 @@ function SearchBar({
 
   return (
     <div
-      className={`${!filterable && "hidden"} relative z-10 flex h-14 w-full items-center justify-center bg-white shadow-bottom sm:top-0`}
+      className={`${!filterable && "hidden"} relative z-10 flex h-14 w-full items-center justify-between bg-white shadow-bottom sm:top-0 sm:justify-center`}
     >
       {cardsLocation && (
-        <div className="absolute left-0 ml-1.5 flex w-1/4 items-center justify-center sm:ml-8 sm:max-w-64">
+        <div className="ml-1.5 flex w-2/4 items-center justify-center sm:absolute sm:left-0 sm:ml-8 sm:w-1/4 sm:max-w-64">
           <div className="flex h-10 w-full items-center rounded-full sm:bg-primary sm:shadow-inner-strong">
             {deck ? (
               <span
@@ -89,10 +89,10 @@ function SearchBar({
           </div>
         </div>
       )}
-      <div className="w-1/4 min-w-40">
+      <div className="mr-4 w-1/4 min-w-36 sm:mr-0">
         <div className="relative my-2 flex h-10 w-full max-w-80 items-center rounded-full bg-tertiary shadow-inner-strong">
           <input
-            className="ml-5 w-24 truncate bg-transparent font-patua text-textPrimary focus:outline-none lg:w-32 xl:w-48 2xl:w-64"
+            className="ml-5 w-20 truncate bg-transparent font-patua text-textPrimary focus:outline-none lg:w-32 xl:w-48 2xl:w-64"
             value={searchedItem}
             onChange={(e) => setSearchedItem(e.target.value)}
           />
