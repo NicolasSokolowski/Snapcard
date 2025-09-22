@@ -9,9 +9,10 @@ export function useResponsiveHeight(
   const [showImage, setShowImage] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    let observer: ResizeObserver | null = null;
 
-    const update = (height: number) => {
+    const update = (el: HTMLElement) => {
+      const height = el.offsetHeight;
       const width = window.innerWidth;
 
       let threshold = desktopThreshold;
@@ -24,17 +25,33 @@ export function useResponsiveHeight(
       setShowImage(height < threshold);
     };
 
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        update(entry.contentRect.height);
+    const init = () => {
+      if (!ref.current) return;
+
+      update(ref.current);
+
+      observer = new ResizeObserver((entries) => {
+        for (const entry of entries) {
+          update(entry.target as HTMLElement);
+        }
+      });
+
+      observer.observe(ref.current);
+    };
+
+    init();
+
+    const interval = setInterval(() => {
+      if (ref.current) {
+        init();
+        clearInterval(interval);
       }
-    });
+    }, 100);
 
-    observer.observe(ref.current);
-
-    update(ref.current.offsetHeight);
-
-    return () => observer.disconnect();
+    return () => {
+      if (observer) observer.disconnect();
+      clearInterval(interval);
+    };
   }, [ref, mobileThreshold, tabletThreshold, desktopThreshold]);
 
   return showImage;
