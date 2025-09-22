@@ -6,6 +6,7 @@ import { updateCardsStats } from "../../store/card/cardThunks";
 import { Card } from "../../store/card/cardSlice";
 import { shuffleArray } from "../../helpers/shuffleArray";
 import { useTranslation } from "react-i18next";
+import { useResponsiveHeight } from "../../helpers/useResponsiveHeight";
 
 export type UserAnswer = {
   id: number;
@@ -31,6 +32,10 @@ function DeckTraining() {
   const shuffledCardsRef = useRef<Card[]>([]);
   const currentCard = shuffledCardsRef.current?.[cardIndex];
   const { t } = useTranslation("training");
+  const frontRef = useRef<HTMLDivElement>(null);
+  const backRef = useRef<HTMLDivElement>(null);
+  const showFrontImage = useResponsiveHeight(frontRef, 65, 73, 81);
+  const showBackImage = useResponsiveHeight(backRef, 65, 73, 81);
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
@@ -120,18 +125,32 @@ function DeckTraining() {
               {currentCard && (
                 <div className="flip-box-inner">
                   <div
-                    className="flip-training-a flex flex-col rounded-lg bg-tertiary bg-[url('/images/card.png')] bg-[length:60%] bg-center bg-no-repeat shadow-custom-light"
-                    onClick={() => handleFlip()}
+                    className={`flip-training-a flex flex-col rounded-lg bg-tertiary shadow-custom-light ${
+                      showFrontImage
+                        ? "justify-between bg-[url('/images/card.png')] bg-[length:55%] bg-center bg-no-repeat pt-5"
+                        : "justify-center"
+                    }`}
+                    onClick={handleFlip}
                   >
-                    <span className="mt-5 flex w-full justify-center font-patua text-3xl text-textPrimary md:text-4xl lg:text-5xl">
+                    <span
+                      ref={frontRef}
+                      className="w-full break-keep px-4 text-center font-patua text-2xl text-textPrimary sm:text-3xl lg:text-4xl"
+                    >
                       {currentCard.front}
                     </span>
                   </div>
                   <div
-                    className="flip-training-b flex flex-col rounded-lg bg-tertiary bg-[url('/images/cardback.png')] bg-[length:60%] bg-center bg-no-repeat shadow-custom-light"
+                    className={`flip-training-b relative flex flex-col rounded-lg bg-tertiary shadow-custom-light ${
+                      showBackImage
+                        ? "justify-between bg-[url('/images/cardback.png')] bg-[length:60%] bg-center bg-no-repeat pt-5"
+                        : "justify-end"
+                    }`}
                     onClick={() => handleFlip()}
                   >
-                    <span className="mt-5 flex w-full justify-center font-patua text-3xl text-textPrimary md:text-4xl lg:text-5xl">
+                    <span
+                      ref={backRef}
+                      className="w-full break-keep px-4 text-center font-patua text-2xl text-textPrimary sm:text-3xl lg:text-4xl"
+                    >
                       {currentCard.back}
                     </span>
                   </div>

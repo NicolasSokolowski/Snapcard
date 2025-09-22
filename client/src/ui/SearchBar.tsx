@@ -69,27 +69,30 @@ function SearchBar({
 
   return (
     <div
-      className={`${!filterable && "hidden"} relative z-10 flex h-14 w-full items-center justify-center bg-white shadow-bottom sm:top-0`}
+      className={`${!filterable && "hidden"} relative z-10 flex h-14 w-full items-center ${cardsLocation ? "justify-between" : "justify-center"} bg-white shadow-bottom sm:top-0 sm:justify-center`}
     >
       {cardsLocation && (
-        <div className="absolute left-0 ml-1.5 flex max-w-64 items-center justify-center sm:ml-8 sm:w-28 lg:w-52 xl:w-64">
+        <div className="ml-1.5 flex w-2/4 items-center justify-center sm:absolute sm:left-0 sm:ml-8 sm:w-1/4 sm:max-w-64">
           <div className="flex h-10 w-full items-center rounded-full sm:bg-primary sm:shadow-inner-strong">
             {deck ? (
-              <span className="font-patua text-sm text-textPrimary sm:ml-5 lg:text-lg">
+              <span
+                className="mx-2 truncate font-patua text-sm text-textPrimary sm:mx-2 md:mx-3 lg:mx-4  lg:text-lg"
+                title={deck.name}
+              >
                 {deck.name}
               </span>
             ) : (
-              <span className="font-patua text-sm text-textPrimary sm:ml-3 lg:ml-5 lg:text-lg">
+              <span className="mx-2 truncate font-patua text-sm text-textPrimary sm:mx-2 md:mx-3 lg:mx-4 lg:text-lg">
                 {t("allCards")}
               </span>
             )}
           </div>
         </div>
       )}
-      <div className="w-1/4 min-w-40">
-        <div className="relative my-2 flex h-10 w-full max-w-80 items-center rounded-full bg-tertiary shadow-inner-strong">
+      <div className="mr-4 w-1/4 min-w-36 sm:mr-0">
+        <div className="relative my-2 flex h-10 w-full max-w-80 animate-pop items-center rounded-full bg-tertiary shadow-inner-strong transition-all duration-300">
           <input
-            className="ml-5 w-24 truncate bg-transparent font-patua text-textPrimary focus:outline-none lg:w-32 xl:w-48 2xl:w-64"
+            className="ml-5 w-20 truncate bg-transparent font-patua text-textPrimary focus:outline-none lg:w-32 xl:w-48 2xl:w-64"
             value={searchedItem}
             onChange={(e) => setSearchedItem(e.target.value)}
           />

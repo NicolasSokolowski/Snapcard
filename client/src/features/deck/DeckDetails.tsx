@@ -46,7 +46,7 @@ function DeckDetails({ deck }: DeckProps) {
             onClick={() => navigate(`/user/decks/${deck.id}/cards`)}
           >
             <div className="flex h-[15%] w-full">
-              <h3 className="w-full break-words text-center font-patua text-2xl text-textPrimary sm:text-xl">
+              <h3 className="w-full break-keep px-2 text-center font-patua text-xl text-textPrimary sm:text-lg">
                 {deck.name}
               </h3>
             </div>
