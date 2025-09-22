@@ -72,14 +72,17 @@ function SearchBar({
       className={`${!filterable && "hidden"} relative z-10 flex h-14 w-full items-center justify-center bg-white shadow-bottom sm:top-0`}
     >
       {cardsLocation && (
-        <div className="absolute left-0 ml-1.5 flex max-w-64 items-center justify-center sm:ml-8 sm:w-28 lg:w-52 xl:w-64">
+        <div className="absolute left-0 ml-1.5 flex w-1/4 items-center justify-center sm:ml-8 sm:max-w-64">
           <div className="flex h-10 w-full items-center rounded-full sm:bg-primary sm:shadow-inner-strong">
             {deck ? (
-              <span className="font-patua text-sm text-textPrimary sm:ml-5 lg:text-lg">
+              <span
+                className="mx-2 truncate font-patua text-sm text-textPrimary sm:mx-2 md:mx-3 lg:mx-4  lg:text-lg"
+                title={deck.name}
+              >
                 {deck.name}
               </span>
             ) : (
-              <span className="font-patua text-sm text-textPrimary sm:ml-3 lg:ml-5 lg:text-lg">
+              <span className="mx-2 truncate font-patua text-sm text-textPrimary sm:mx-2 md:mx-3 lg:mx-4 lg:text-lg">
                 {t("allCards")}
               </span>
             )}
