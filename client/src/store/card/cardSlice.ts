@@ -18,12 +18,8 @@ export interface Card {
   deck_id: number;
   front: string;
   back: string;
-  difficulty: number;
-  win_streak: number;
-  max_early: number;
+  difficulty: string;
   next_occurrence: number;
-  created_at: Date;
-  updated_at: Date;
 }
 
 interface CardState {

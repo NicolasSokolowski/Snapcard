@@ -10,6 +10,10 @@ import {
 } from "../errors/index.errors";
 import { userDatamapper } from "../datamappers/index.datamappers";
 import { updateCardProgress } from "../helpers/index.helpers";
+import {
+  CardResponse,
+  difficultyNumberToLabel
+} from "../helpers/difficultyNumberToLabel";
 
 type CardUpdateRequest = {
   id: number;
@@ -36,7 +40,16 @@ export class CardController extends CoreController<
       throw new NotFoundError("Cards not found", "CARDS_NOT_FOUND");
     }
 
-    res.status(200).send(cards);
+    const responseCards: CardResponse[] = cards.map((card) => {
+      const { created_at, updated_at, max_early, win_streak, ...rest } = card;
+
+      return {
+        ...rest,
+        difficulty: difficultyNumberToLabel(card.difficulty)
+      } as CardResponse;
+    });
+
+    res.status(200).send(responseCards);
   };
 
   getAllCardsByUserEmail = async (
@@ -112,7 +125,16 @@ export class CardController extends CoreController<
       throw new DatabaseConnectionError();
     }
 
-    res.status(200).send(cards);
+    const responseCards: CardResponse[] = cards.map((card) => {
+      const { created_at, updated_at, max_early, win_streak, ...rest } = card;
+
+      return {
+        ...rest,
+        difficulty: difficultyNumberToLabel(card.difficulty)
+      } as CardResponse;
+    });
+
+    res.status(200).send(responseCards);
   };
 
   create = async (req: Request, res: Response): Promise<void> => {
@@ -140,7 +162,15 @@ export class CardController extends CoreController<
       throw new DatabaseConnectionError();
     }
 
-    res.status(201).json(createdItem);
+    const { created_at, updated_at, max_early, win_streak, ...rest } =
+      createdItem;
+
+    const responseCard: CardResponse = {
+      ...rest,
+      difficulty: difficultyNumberToLabel(createdItem.difficulty)
+    } as CardResponse;
+
+    res.status(201).json(responseCard);
   };
 
   update = async (req: Request, res: Response): Promise<void> => {
@@ -185,9 +215,15 @@ export class CardController extends CoreController<
       throw new DatabaseConnectionError();
     }
 
-    const { created_at, updated_at, ...cardWithoutTimestamps } = updatedItem;
+    const { created_at, updated_at, max_early, win_streak, ...rest } =
+      updatedItem;
 
-    res.status(200).json(cardWithoutTimestamps);
+    const responseCard: CardResponse = {
+      ...rest,
+      difficulty: difficultyNumberToLabel(card.difficulty)
+    } as CardResponse;
+
+    res.status(200).json(responseCard);
   };
 
   updateCardsDifficulty = async (
@@ -256,6 +292,15 @@ export class CardController extends CoreController<
       throw new DatabaseConnectionError();
     }
 
-    res.status(200).json({ cards: updatedCards });
+    const responseCards: CardResponse[] = updatedCards.map((card) => {
+      const { created_at, updated_at, max_early, win_streak, ...rest } = card;
+
+      return {
+        ...rest,
+        difficulty: difficultyNumberToLabel(card.difficulty)
+      } as CardResponse;
+    });
+
+    res.status(200).json({ cards: responseCards });
   };
 }
