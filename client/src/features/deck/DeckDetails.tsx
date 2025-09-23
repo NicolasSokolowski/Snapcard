@@ -4,6 +4,7 @@ import DeckModification from "./DeckModification";
 import DeckDeletion from "./DeckDeletion";
 import { useNavigate } from "react-router-dom";
 import { useResponsiveHeight } from "../../helpers/useResponsiveHeight";
+import { useDeckDifficultyIndicator } from "../../helpers/useDeckDifficultyIndicator";
 
 export interface DeckProps {
   deck: Deck;
@@ -17,6 +18,7 @@ function DeckDetails({ deck }: DeckProps) {
   const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
   const showImage = useResponsiveHeight(ref, 85, 64, 64);
+  const difficultyIndicator = useDeckDifficultyIndicator(deck.id);
 
   const handleModifyClick = () => {
     if (flipSide === "left") {
@@ -45,10 +47,13 @@ function DeckDetails({ deck }: DeckProps) {
       <div className="flip-box-inner">
         <div className="flip-box-a">
           <div
-            className={`flex size-full flex-col items-center rounded-md bg-tertiary pt-3 shadow-custom-light ${showImage ? "justify-between bg-[url('/images/deck.png')] bg-cover" : ""}`}
+            className={`relative flex size-full flex-col items-center overflow-hidden rounded-md bg-tertiary pt-3 shadow-custom-light ${showImage ? "justify-between bg-[url('/images/deck.png')] bg-cover" : ""}`}
             onClick={() => navigate(`/user/decks/${deck.id}/cards`)}
           >
             <div className="flex w-full">
+              <div
+                className={`absolute right-0 top-0 size-12 origin-bottom-left -translate-y-12 translate-x-6 rotate-45 overflow-hidden sm:size-8 sm:-translate-y-8 sm:translate-x-4 ${difficultyIndicator}`}
+              />
               <h3
                 ref={ref}
                 className="w-full break-keep px-3 text-center font-patua text-xl text-textPrimary sm:text-lg"
