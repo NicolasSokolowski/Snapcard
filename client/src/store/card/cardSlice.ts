@@ -18,7 +18,7 @@ export interface Card {
   deck_id: number;
   front: string;
   back: string;
-  difficulty: string;
+  difficulty: number;
   next_occurrence: number;
 }
 

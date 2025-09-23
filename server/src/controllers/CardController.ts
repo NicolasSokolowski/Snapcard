@@ -10,10 +10,6 @@ import {
 } from "../errors/index.errors";
 import { userDatamapper } from "../datamappers/index.datamappers";
 import { updateCardProgress } from "../helpers/index.helpers";
-import {
-  CardResponse,
-  difficultyNumberToLabel
-} from "../helpers/difficultyNumberToLabel";
 
 type CardUpdateRequest = {
   id: number;
@@ -40,13 +36,10 @@ export class CardController extends CoreController<
       throw new NotFoundError("Cards not found", "CARDS_NOT_FOUND");
     }
 
-    const responseCards: CardResponse[] = cards.map((card) => {
+    const responseCards = cards.map((card) => {
       const { created_at, updated_at, max_early, win_streak, ...rest } = card;
 
-      return {
-        ...rest,
-        difficulty: difficultyNumberToLabel(card.difficulty)
-      } as CardResponse;
+      return rest;
     });
 
     res.status(200).send(responseCards);
@@ -125,13 +118,10 @@ export class CardController extends CoreController<
       throw new DatabaseConnectionError();
     }
 
-    const responseCards: CardResponse[] = cards.map((card) => {
+    const responseCards = cards.map((card) => {
       const { created_at, updated_at, max_early, win_streak, ...rest } = card;
 
-      return {
-        ...rest,
-        difficulty: difficultyNumberToLabel(card.difficulty)
-      } as CardResponse;
+      return rest;
     });
 
     res.status(200).send(responseCards);
@@ -162,13 +152,8 @@ export class CardController extends CoreController<
       throw new DatabaseConnectionError();
     }
 
-    const { created_at, updated_at, max_early, win_streak, ...rest } =
+    const { created_at, updated_at, max_early, win_streak, ...responseCard } =
       createdItem;
-
-    const responseCard: CardResponse = {
-      ...rest,
-      difficulty: difficultyNumberToLabel(createdItem.difficulty)
-    } as CardResponse;
 
     res.status(201).json(responseCard);
   };
@@ -215,13 +200,8 @@ export class CardController extends CoreController<
       throw new DatabaseConnectionError();
     }
 
-    const { created_at, updated_at, max_early, win_streak, ...rest } =
+    const { created_at, updated_at, max_early, win_streak, ...responseCard } =
       updatedItem;
-
-    const responseCard: CardResponse = {
-      ...rest,
-      difficulty: difficultyNumberToLabel(card.difficulty)
-    } as CardResponse;
 
     res.status(200).json(responseCard);
   };
@@ -292,13 +272,10 @@ export class CardController extends CoreController<
       throw new DatabaseConnectionError();
     }
 
-    const responseCards: CardResponse[] = updatedCards.map((card) => {
+    const responseCards = updatedCards.map((card) => {
       const { created_at, updated_at, max_early, win_streak, ...rest } = card;
 
-      return {
-        ...rest,
-        difficulty: difficultyNumberToLabel(card.difficulty)
-      } as CardResponse;
+      return rest;
     });
 
     res.status(200).json({ cards: responseCards });

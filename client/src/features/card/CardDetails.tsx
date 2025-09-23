@@ -22,11 +22,11 @@ function CardDetails({ card }: CardProps) {
     useState<string>("");
 
   useEffect(() => {
-    if (card.difficulty === "new") {
+    if (card.difficulty === 0) {
       setCardDifficultyIndicator("bg-secondary");
-    } else if (card.difficulty === "hard") {
+    } else if (card.difficulty <= 15) {
       setCardDifficultyIndicator("bg-red-600");
-    } else if (card.difficulty === "medium") {
+    } else if (card.difficulty > 15 && card.difficulty <= 30) {
       setCardDifficultyIndicator("bg-orange-400");
     } else {
       setCardDifficultyIndicator("bg-green-500");
