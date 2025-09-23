@@ -19,6 +19,7 @@ function SignupForm() {
   const [userInfo, setUserInfo] = useState(initialState);
   const [error, setError] = useState(errorInitialState);
   const hasAccount = useAppSelector((state) => state.user.hasAccount);
+  const [isTocChecked, setIsTocChecked] = useState(false);
   const dispatch = useAppDispatch();
 
   const { t } = useTranslation(["auth", "errors"]);
@@ -62,7 +63,7 @@ function SignupForm() {
 
   return (
     <section className="relative min-h-[33rem] overflow-hidden rounded-md bg-tertiary font-patua text-textPrimary shadow-custom-light transition-all duration-300 xl:min-h-[36rem]">
-      <h2 className="m-5 text-center text-3xl xl:text-4xl">{t("register")}</h2>
+      <h2 className="mt-5 text-center text-3xl xl:text-4xl">{t("register")}</h2>
       <form
         className="flex flex-col items-center justify-center gap-2 p-3 xl:gap-3 xl:p-5"
         onSubmit={handleSubmit()}
@@ -107,11 +108,48 @@ function SignupForm() {
             autoComplete="off"
           />
         </div>
+        <div className="h-12 w-80">
+          <div className="ml-1 flex items-center space-x-2">
+            <div
+              className={`flex h-6 w-5 cursor-pointer items-center justify-center rounded border-2 ${
+                isTocChecked ? "bg-secondary" : "border-gray-300"
+              }`}
+              onClick={() => setIsTocChecked(!isTocChecked)}
+            >
+              {isTocChecked && (
+                <svg
+                  className="size-full p-[2px] text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M4 12l6 6L20 6" />
+                </svg>
+              )}
+            </div>
+
+            <span className="w-full text-sm font-medium text-textPrimary">
+              En cochant cette case, j’accepte les{" "}
+              <a
+                href="/cgu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary underline hover:text-blue-500"
+                onClick={(e) => e.stopPropagation()}
+              >
+                CGU et la Politique de confidentialité
+              </a>
+            </span>
+          </div>
+        </div>
 
         <div className="flex flex-col gap-3">
           <button
             type="submit"
-            className="mt-5 w-72 rounded-md bg-secondary p-3 shadow-custom-light xl:w-80"
+            className="w-72 rounded-md bg-secondary p-3 shadow-custom-light xl:w-80"
           >
             <span className="rounded-md text-3xl text-white">
               {t("auth:buttons.signup")}
