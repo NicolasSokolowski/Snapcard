@@ -27,11 +27,23 @@ function SignupForm() {
   const handleSubmit = () => async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!isTocChecked) {
+      setError({
+        ...error,
+        fields: [...error.fields, "toc"],
+        messages: [
+          ...error.messages,
+          "Vous devez accepter les CGU et la Politique de confidentialité"
+        ]
+      });
+      return;
+    }
+
     try {
       await axiosInstance.post(
         "/users",
         {
-          username: userInfo.username.toLowerCase(),
+          username: userInfo.username,
           email: userInfo.email.toLowerCase(),
           password: userInfo.password,
           subject: t("auth:accountCreation")
@@ -53,6 +65,14 @@ function SignupForm() {
   };
 
   const handleChange = createHandleChange(setUserInfo, setError);
+
+  const handleCheckChange = () => {
+    setError((prev) => ({
+      fields: prev.fields.filter((field) => field !== "toc"),
+      messages: prev.messages.filter((_, i) => prev.fields[i] !== "toc")
+    }));
+    setIsTocChecked(!isTocChecked);
+  };
 
   const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -114,7 +134,7 @@ function SignupForm() {
               className={`flex h-6 w-5 cursor-pointer items-center justify-center rounded border-2 ${
                 isTocChecked ? "bg-secondary" : "border-gray-300"
               }`}
-              onClick={() => setIsTocChecked(!isTocChecked)}
+              onClick={handleCheckChange}
             >
               {isTocChecked && (
                 <svg
@@ -134,6 +154,7 @@ function SignupForm() {
             <span className="w-full text-sm font-medium text-textPrimary">
               En cochant cette case, j’accepte les{" "}
               <a
+                id="toc"
                 href="/cgu"
                 target="_blank"
                 rel="noopener noreferrer"
