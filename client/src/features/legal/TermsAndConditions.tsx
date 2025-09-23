@@ -7,7 +7,7 @@ function TermsAndConditions() {
   return (
     <div className="flex flex-col font-patua text-textPrimary sm:flex-row">
       {user && (
-        <div className="sticky top-0 z-10 flex h-10 w-full justify-center rounded-sm bg-tertiary shadow-right sm:z-50 sm:h-screen-dvh sm:w-72 sm:max-w-64 md:w-80">
+        <div className="sticky top-0 z-10 flex h-10 w-full justify-center rounded-sm bg-tertiary shadow-right sm:z-50 sm:h-screen-dvh sm:w-72 sm:max-w-80 md:w-80 ">
           <NavBar />
         </div>
       )}
