@@ -44,6 +44,10 @@ export default {
         tertiary: "#F4EFE5",
         textPrimary: "#060606bf",
         error: "#D76060"
+      },
+      backgroundImage: {
+        "stripes-diag-reverse":
+          "repeating-linear-gradient(135deg, #e5e7eb 0px, #e5e7eb 20px, #d1d5db 20px, #d1d5db 40px)"
       }
     },
     keyframes: {
