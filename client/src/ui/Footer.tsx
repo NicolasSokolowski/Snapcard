@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAppSelector } from "../store/hooks";
 
 function Footer() {
@@ -18,7 +18,7 @@ function Footer() {
     >
       <div className={`sm:w-96 ${!user && "hidden"}`} />
       <div className="mx-10 flex w-full items-center justify-center gap-8 font-patua text-xs text-textPrimary sm:mx-20 sm:justify-between sm:gap-0 sm:text-base lg:text-lg">
-        <p>{t("tos")}</p>
+        <Link to="/cgu">{t("tos")}</Link>
         <p>{t("aboutUs")}</p>
         <p>Contact</p>
         <p>© 2025 Snapcard</p>

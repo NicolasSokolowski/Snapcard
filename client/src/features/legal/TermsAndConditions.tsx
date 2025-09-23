@@ -65,8 +65,9 @@ function TermsAndConditions() {
                       Emails fonctionnels / notifications essentielles :
                       <br />
                       <br />
-                      • Modification de vos droits sur le site Alertes
-                      importantes liées à votre compte
+                      • Modification de vos droits sur le site
+                      <br />
+                      • Alertes importantes liées à votre compte
                       <br />→ Ces emails sont nécessaires au fonctionnement du
                       service et ne nécessitent pas de consentement
                       supplémentaire.
