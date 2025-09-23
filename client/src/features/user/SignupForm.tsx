@@ -132,8 +132,8 @@ function SignupForm() {
           <div className="ml-1 flex items-center space-x-2">
             <div
               className={`flex h-6 w-5 cursor-pointer items-center justify-center rounded border-2 ${
-                isTocChecked ? "bg-secondary" : "border-gray-300"
-              }`}
+                isTocChecked ? "bg-secondary" : ""
+              } ${error.fields.includes("toc") ? "border-error" : "border-gray-300"}`}
               onClick={handleCheckChange}
             >
               {isTocChecked && (
