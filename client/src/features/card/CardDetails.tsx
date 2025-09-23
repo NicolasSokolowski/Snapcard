@@ -18,6 +18,20 @@ function CardDetails({ card }: CardProps) {
   const backRef = useRef<HTMLDivElement>(null);
   const showFrontImage = useResponsiveHeight(frontRef, 95, 70, 70);
   const showBackImage = useResponsiveHeight(backRef, 95, 70, 70);
+  const [cardDifficultyIndicator, setCardDifficultyIndicator] =
+    useState<string>("");
+
+  useEffect(() => {
+    if (card.difficulty === 0) {
+      setCardDifficultyIndicator("bg-secondary");
+    } else if (card.difficulty <= 15) {
+      setCardDifficultyIndicator("bg-red-600");
+    } else if (card.difficulty > 15 && card.difficulty <= 30) {
+      setCardDifficultyIndicator("bg-orange-400");
+    } else {
+      setCardDifficultyIndicator("bg-green-500");
+    }
+  }, [setCardDifficultyIndicator, card]);
 
   const isEdit = activeAction.startsWith("edit");
 
@@ -50,11 +64,14 @@ function CardDetails({ card }: CardProps) {
           >
             <div className="flip-card-front">
               <div
-                className={`relative flex size-full flex-col items-center rounded-md bg-tertiary ${showFrontImage ? "justify-between bg-[url('/images/card.png')] bg-[length:55%] bg-center bg-no-repeat" : "justify-end"} shadow-custom-light`}
+                className={`relative flex size-full flex-col items-center overflow-hidden rounded-md bg-tertiary ${showFrontImage ? "justify-between bg-[url('/images/card.png')] bg-[length:55%] bg-center bg-no-repeat" : "justify-end"} shadow-custom-light`}
                 onClick={() => {
                   if (!isEdit) setIsFlipped(true);
                 }}
               >
+                <div
+                  className={`absolute right-0 top-0 size-12 origin-bottom-left -translate-y-12 translate-x-6 rotate-45 overflow-hidden sm:size-8 sm:-translate-y-8 sm:translate-x-4 ${cardDifficultyIndicator}`}
+                />
                 <h3
                   className={`w-full break-keep px-5 text-center font-patua text-2xl text-textPrimary xs:text-xl sm:text-lg ${!showFrontImage ? "absolute top-24 xs:top-16" : "pt-4 sm:pt-3"}`}
                   ref={frontRef}
