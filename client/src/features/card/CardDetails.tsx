@@ -70,7 +70,7 @@ function CardDetails({ card }: CardProps) {
                 }}
               >
                 <div
-                  className={`absolute right-0 top-0 size-8 origin-bottom-left -translate-y-8 translate-x-4 rotate-45 overflow-hidden ${cardDifficultyIndicator}`}
+                  className={`absolute right-0 top-0 size-12 origin-bottom-left -translate-y-12 translate-x-6 rotate-45 overflow-hidden sm:size-8 sm:-translate-y-8 sm:translate-x-4 ${cardDifficultyIndicator}`}
                 />
                 <h3
                   className={`w-full break-keep px-5 text-center font-patua text-2xl text-textPrimary xs:text-xl sm:text-lg ${!showFrontImage ? "absolute top-24 xs:top-16" : "pt-4 sm:pt-3"}`}
