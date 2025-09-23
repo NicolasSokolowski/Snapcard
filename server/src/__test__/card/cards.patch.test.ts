@@ -83,22 +83,58 @@ describe("Card tests", () => {
       .expect(200);
 
     expect(response.body.cards[0].id).toEqual(cardOne.body.id);
-    expect(response.body.cards[0].win_streak).toEqual(1);
+    const winStreakOne = await pool.query(
+      `SELECT "win_streak"
+      FROM "card"
+      WHERE "id" = $1`,
+      [cardOne.body.id]
+    );
+    expect(winStreakOne.rows[0].win_streak).toEqual(1);
     expect(response.body.cards[0].difficulty).toEqual(1);
     expect(response.body.cards[0].next_occurrence).toEqual(1);
-    expect(response.body.cards[0].max_early).toEqual(4);
+    const maxEarlyOne = await pool.query(
+      `SELECT "max_early"
+      FROM "card"
+      WHERE "id" = $1`,
+      [cardOne.body.id]
+    );
+    expect(maxEarlyOne.rows[0].max_early).toEqual(4);
 
     expect(response.body.cards[1].id).toEqual(cardTwo.body.id);
-    expect(response.body.cards[1].win_streak).toEqual(0);
+    const winStreakTwo = await pool.query(
+      `SELECT "win_streak"
+      FROM "card"
+      WHERE "id" = $1`,
+      [cardTwo.body.id]
+    );
+    expect(winStreakTwo.rows[0].win_streak).toEqual(0);
     expect(response.body.cards[1].difficulty).toEqual(3);
     expect(response.body.cards[1].next_occurrence).toEqual(3);
-    expect(response.body.cards[1].max_early).toEqual(6);
+    const maxEarlyTwo = await pool.query(
+      `SELECT "max_early"
+      FROM "card"
+      WHERE "id" = $1`,
+      [cardTwo.body.id]
+    );
+    expect(maxEarlyTwo.rows[0].max_early).toEqual(6);
 
     expect(response.body.cards[2].id).toEqual(cardThree.body.id);
-    expect(response.body.cards[2].win_streak).toEqual(0);
+    const winStreakThree = await pool.query(
+      `SELECT "win_streak"
+      FROM "card"
+      WHERE "id" = $1`,
+      [cardThree.body.id]
+    );
+    expect(winStreakThree.rows[0].win_streak).toEqual(0);
     expect(response.body.cards[2].difficulty).toEqual(1);
     expect(response.body.cards[2].next_occurrence).toEqual(1);
-    expect(response.body.cards[2].max_early).toEqual(4);
+    const maxEarlyThree = await pool.query(
+      `SELECT "max_early"
+      FROM "card"
+      WHERE "id" = $1`,
+      [cardThree.body.id]
+    );
+    expect(maxEarlyThree.rows[0].max_early).toEqual(4);
   });
 
   it("processes not due cards (next_occurrence > 0) based on user answers", async () => {
@@ -150,22 +186,58 @@ describe("Card tests", () => {
       .expect(200);
 
     expect(response.body.cards[0].id).toEqual(cardOne.body.id);
-    expect(response.body.cards[0].win_streak).toEqual(2);
+    const winStreakOne = await pool.query(
+      `SELECT "win_streak"
+      FROM "card"
+      WHERE "id" = $1`,
+      [cardOne.body.id]
+    );
+    expect(winStreakOne.rows[0].win_streak).toEqual(2);
     expect(response.body.cards[0].difficulty).toEqual(9);
     expect(response.body.cards[0].next_occurrence).toEqual(3);
-    expect(response.body.cards[0].max_early).toEqual(11);
+    const maxEarlyOne = await pool.query(
+      `SELECT "max_early"
+      FROM "card"
+      WHERE "id" = $1`,
+      [cardOne.body.id]
+    );
+    expect(maxEarlyOne.rows[0].max_early).toEqual(11);
 
     expect(response.body.cards[1].id).toEqual(cardTwo.body.id);
-    expect(response.body.cards[1].win_streak).toEqual(0);
+    const winStreakTwo = await pool.query(
+      `SELECT "win_streak"
+      FROM "card"
+      WHERE "id" = $1`,
+      [cardTwo.body.id]
+    );
+    expect(winStreakTwo.rows[0].win_streak).toEqual(0);
     expect(response.body.cards[1].difficulty).toEqual(5);
     expect(response.body.cards[1].next_occurrence).toEqual(1);
-    expect(response.body.cards[1].max_early).toEqual(6);
+    const maxEarlyTwo = await pool.query(
+      `SELECT "max_early"
+      FROM "card"
+      WHERE "id" = $1`,
+      [cardTwo.body.id]
+    );
+    expect(maxEarlyTwo.rows[0].max_early).toEqual(6);
 
     expect(response.body.cards[2].id).toEqual(cardThree.body.id);
-    expect(response.body.cards[2].win_streak).toEqual(0);
+    const winStreakThree = await pool.query(
+      `SELECT "win_streak"
+      FROM "card"
+      WHERE "id" = $1`,
+      [cardThree.body.id]
+    );
+    expect(winStreakThree.rows[0].win_streak).toEqual(0);
     expect(response.body.cards[2].difficulty).toEqual(1);
     expect(response.body.cards[2].next_occurrence).toEqual(0);
-    expect(response.body.cards[2].max_early).toEqual(4);
+    const maxEarlyThree = await pool.query(
+      `SELECT "max_early"
+      FROM "card"
+      WHERE "id" = $1`,
+      [cardThree.body.id]
+    );
+    expect(maxEarlyThree.rows[0].max_early).toEqual(4);
   });
 
   it("returns a 400 error if user_answer is not provided", async () => {

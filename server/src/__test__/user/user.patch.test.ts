@@ -355,7 +355,9 @@ describe("User tests", () => {
 
     expect(response.body.errors).toEqual([
       {
-        message: "Current password is incorrect"
+        message: "Current password is incorrect",
+        code: "INVALID_CURRENT_PASSWORD",
+        field: "currentPassword"
       }
     ]);
   });
