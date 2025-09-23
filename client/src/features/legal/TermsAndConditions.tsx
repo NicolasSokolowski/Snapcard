@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useAppSelector } from "../../store/hooks";
 import NavBar from "../../ui/NavBar";
 
@@ -11,7 +12,16 @@ function TermsAndConditions() {
           <NavBar />
         </div>
       )}
-      <div className="flex w-full flex-col sm:flex-row">
+      <div className="relative flex w-full flex-col sm:flex-row">
+        {!user && (
+          <Link to="/">
+            <img
+              src="/images/home.png"
+              alt="Home logo"
+              className="absolute right-4 top-4 h-10 sm:right-5 sm:top-5 sm:h-12"
+            />
+          </Link>
+        )}
         <div className="flex w-full justify-center sm:mt-5">
           <div className="flex w-full flex-col items-center sm:gap-12">
             <div className="flex h-48 items-center">
