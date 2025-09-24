@@ -41,8 +41,8 @@ function UserProfile() {
   ];
 
   return (
-    <div className="scrollbar-hide min-h-full overflow-y-auto">
-      <div className="mb-4 mt-5 flex h-100 flex-col items-center gap-8 sm:mt-4 md:justify-start  lg:ml-20 lg:h-80 lg:flex-row lg:gap-12">
+    <div className="scrollbar-hide flex min-h-full flex-col items-center overflow-y-auto sm:items-start md:items-center lg:items-start">
+      <div className="mb-4 mt-5 flex h-96 flex-col items-center gap-8 sm:mt-4 md:justify-start  lg:ml-20 lg:h-80 lg:flex-row lg:gap-12">
         <div className="flex size-64 animate-pop items-center justify-center rounded-full bg-tertiary shadow-custom-light transition-all duration-300">
           <div className="size-52 overflow-hidden rounded-full border-8 border-primary">
             <img
@@ -65,8 +65,8 @@ function UserProfile() {
           </div>
         </div>
       </div>
-      <div className="mx-16 mb-12 flex justify-center sm:mb-8 lg:justify-start">
-        <div className="mb-8 flex w-96 flex-col gap-4 lg:mx-4 lg:w-112">
+      <div className="mx-16 mb-8 flex sm:mb-8 lg:justify-start">
+        <div className="flex w-80 flex-col items-center gap-4 sm:w-96 sm:items-start lg:mx-4 lg:w-112">
           {actions.map((key) => (
             <div key={key}>
               {visibleForm === key && (
@@ -75,11 +75,11 @@ function UserProfile() {
                   setIsEditing={setIsEditing}
                   visibleForm={visibleForm}
                   setVisibleForm={setVisibleForm}
-                  className="mb-4 size-80 sm:block lg:hidden"
+                  className="mb-4 size-80 xs:size-96 sm:block lg:hidden"
                 />
               )}
               <button
-                className={`h-16 w-80 animate-pop rounded-md shadow-custom-light transition-all duration-500 sm:w-96 ${
+                className={`h-16 w-80 animate-pop rounded-md shadow-custom-light transition-all duration-500 xs:w-96 ${
                   visibleForm === key
                     ? "bg-tertiary text-textPrimary"
                     : "bg-secondary text-white"
@@ -93,6 +93,7 @@ function UserProfile() {
               </button>
             </div>
           ))}
+          <LanguageSelector />
         </div>
         <FormSelector
           isEditing={isEditing}
@@ -102,7 +103,6 @@ function UserProfile() {
           className="hidden size-96 lg:block"
         />
       </div>
-      <LanguageSelector />
     </div>
   );
 }
