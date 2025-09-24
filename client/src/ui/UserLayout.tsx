@@ -4,6 +4,7 @@ import { useState } from "react";
 import SearchBar from "./SearchBar";
 import { Deck } from "../store/deck/deckSlice";
 import { Card } from "../store/card/cardSlice";
+import ScrollToTop from "./ScrollToTop";
 
 export type ItemsListType = Deck | Card;
 
@@ -22,7 +23,9 @@ function UserLayout() {
         <div className="sticky top-0 z-10 hidden sm:block">
           <SearchBar setItemsList={setItemsList} />
         </div>
-        <Outlet context={{ itemsList, setItemsList }} />
+        <ScrollToTop>
+          <Outlet context={{ itemsList, setItemsList }} />
+        </ScrollToTop>
       </div>
     </div>
   );
