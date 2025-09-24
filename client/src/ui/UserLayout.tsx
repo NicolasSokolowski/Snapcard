@@ -19,11 +19,11 @@ function UserLayout() {
           <SearchBar setItemsList={setItemsList} />
         </div>
       </div>
-      <div className="scrollbar-hide size-full overflow-y-auto bg-primary">
-        <div className="sticky top-0 z-10 hidden sm:block">
-          <SearchBar setItemsList={setItemsList} />
-        </div>
+      <div className="scrollbar-hide w-full overflow-y-auto bg-primary">
         <ScrollToTop>
+          <div className="sticky top-0 z-10 hidden sm:block">
+            <SearchBar setItemsList={setItemsList} />
+          </div>
           <Outlet context={{ itemsList, setItemsList }} />
         </ScrollToTop>
       </div>
