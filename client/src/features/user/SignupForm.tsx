@@ -31,10 +31,7 @@ function SignupForm() {
       setError({
         ...error,
         fields: [...error.fields, "tos"],
-        messages: [
-          ...error.messages,
-          "Vous devez accepter les CGU et la Politique de confidentialité"
-        ]
+        messages: [...error.messages, t("errors:tosNotChecked")]
       });
       return;
     }
@@ -152,7 +149,7 @@ function SignupForm() {
             </div>
 
             <span className="w-full text-xs font-medium text-textPrimary sm:text-sm">
-              En cochant cette case, j’accepte les{" "}
+              {t("auth:tosBox")}{" "}
               <a
                 id="tos"
                 href="/cgu"
@@ -161,7 +158,7 @@ function SignupForm() {
                 className="text-secondary underline hover:text-blue-500"
                 onClick={(e) => e.stopPropagation()}
               >
-                CGU et la Politique de confidentialité
+                {t("auth:tos")}
               </a>
             </span>
           </div>

@@ -36,6 +36,8 @@ interface Resources {
     register: "Register";
     resetSuccess: "Success : A confirmation e-mail has been sent to you. You can already sign in with your new password.";
     success: "Success !";
+    tos: "ToS and Privacy Policy";
+    tosBox: "By checking this box, I accept the";
     username: "Username";
     usernameCol: "Username :";
   };
@@ -88,6 +90,7 @@ interface Resources {
     password: "Password";
     passwordConfirmation: "Password confirmation";
     passwordMisMatch: "Passwords doesn't match";
+    tosNotChecked: "You must accept the ToS and Privacy Policy";
     username: "Username";
     validation: {
       "any.only": "New password and it's confirmation are different";
@@ -121,47 +124,47 @@ interface Resources {
       line6: "• Access cookie: 1 day";
       line7: "• Refresh cookie: 7 days";
       line8: "As these cookies are essential for the operation of the site, they do not require prior consent.";
-      subtitle: "6. Cookies";
+      subtitle: "4. Cookies";
     };
     data: {
       line1: "We only collect:";
       line2: "• Email address upon registration, for the newsletter or via the contact form.";
       line3: "• Functional cookies (access token and refresh token) to secure access and manage your account.";
       line4: "• LocalStorage: only your email address, to maintain the session and facilitate access to your account.";
-      subtitle: "4. Data Collected";
+      subtitle: "2. Data Collected";
     };
     dataController: {
       line1: "• The data controller is: Sokolowski Nicolas";
       line2: "• Email: contact@playsnapcard.com";
       line3: "• Address:";
-      subtitle: "2. Data Controller";
+      subtitle: "11. Data Controller";
     };
     dataRetention: {
       line1: "• Functional emails: stored for as long as necessary to manage your account or requests.";
       line2: "• Newsletter: stored while you are subscribed and until you unsubscribe.";
       line3: "• LocalStorage: stored as long as the session is active or until deleted by the user.";
-      subtitle: "7. Data Retention";
+      subtitle: "5. Data Retention";
     };
     hosting: {
       line1: "The website is hosted by: OVH";
       line2: "Data is exclusively stored in Germany.";
-      subtitle: "3. Hosting";
+      subtitle: "12. Hosting";
     };
     legalBasis: {
       line1: "The processing of your data is based on:";
       line2: "• Your consent (e.g., subscription to the newsletter)";
       line3: "• Or the performance of a contract and legitimate interest (account management, secure authentication, operation of the site)";
-      subtitle: "11. Legal Basis";
+      subtitle: "9. Legal Basis";
     };
     minors: {
       line1: "The website is intended for users aged 15 and over.";
       line2: "Users under the age of 15 must obtain the authorization of their legal representative or use the service within an educational setting, under the responsibility of their institution.";
-      subtitle: "9. Use by Minors";
+      subtitle: "7. Use by Minors";
     };
     policyUpdates: {
       line1: "This policy may be modified at any time.";
       line2: "In the event of a substantial change, users will be notified by email or via a notification on the site.";
-      subtitle: "12. Policy Updates";
+      subtitle: "10. Policy Updates";
     };
     purpose: {
       line1: "These terms define the use of the website playsnapcard.com and the rights and obligations of users regarding their personal data.";
@@ -178,17 +181,17 @@ interface Resources {
       line6: "You may unsubscribe at any time through a link in each email.";
       line7: "• Cookies: used only for authentication and account security.";
       line8: "• LocalStorage: temporarily stores your email to maintain the session and facilitate account access.";
-      line9: "→ These data are necessary for the operation of the service and do not require additional consent.";
-      subtitle: "5. Purpose of Emails and Data";
+      line9: "These data are necessary for the operation of the service and do not require additional consent.";
+      subtitle: "3. Purpose of Emails and Data";
     };
     security: {
       line1: "• Secure cookies and LocalStorage for authentication";
       line2: "• Data access limited to authorized personnel";
       line3: "• Data transmission via HTTPS";
       line4: "• Sensitive data (passwords) are never stored in plain text, neither on the client side nor on the server side";
-      subtitle: "10. Security";
+      subtitle: "8. Security";
     };
-    title: "Terms of Use (ToS) and Privacy Policy";
+    title: "Terms of Service (ToS) and Privacy Policy";
     userRights: {
       line1: "You may at any time:";
       line2: "• Access your data";
@@ -199,7 +202,7 @@ interface Resources {
       line7: "These actions can be carried out via the features available in your account.";
       line8: "If you delete your account, all your personal data will be immediately removed from our systems, except for any data we may need to retain to comply with legal obligations (e.g., billing or security).";
       line9: "If you encounter a problem or prefer manual processing, please contact us at: contact@playsnapcard.com";
-      subtitle: "8. User Rights";
+      subtitle: "6. User Rights";
     };
   };
   training: {
