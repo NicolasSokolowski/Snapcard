@@ -37,5 +37,6 @@
   "NOT_FOUND": "Not found",
   "ACCESS_DENIED": "Access denied",
   "DATABASE_ERROR": "Error while trying to connect to the database",
-  "UNAUTHORIZED": "Unauthorized"
+  "UNAUTHORIZED": "Unauthorized",
+  "tosNotChecked": "You must accept the ToS and Privacy Policy"
 }
