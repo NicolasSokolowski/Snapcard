@@ -19,7 +19,7 @@ function SignupForm() {
   const [userInfo, setUserInfo] = useState(initialState);
   const [error, setError] = useState(errorInitialState);
   const hasAccount = useAppSelector((state) => state.user.hasAccount);
-  const [isTocChecked, setIsTocChecked] = useState(false);
+  const [isToSChecked, setIsToSChecked] = useState(false);
   const dispatch = useAppDispatch();
 
   const { t } = useTranslation(["auth", "errors"]);
@@ -27,10 +27,10 @@ function SignupForm() {
   const handleSubmit = () => async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!isTocChecked) {
+    if (!isToSChecked) {
       setError({
         ...error,
-        fields: [...error.fields, "toc"],
+        fields: [...error.fields, "tos"],
         messages: [
           ...error.messages,
           "Vous devez accepter les CGU et la Politique de confidentialité"
@@ -68,10 +68,10 @@ function SignupForm() {
 
   const handleCheckChange = () => {
     setError((prev) => ({
-      fields: prev.fields.filter((field) => field !== "toc"),
-      messages: prev.messages.filter((_, i) => prev.fields[i] !== "toc")
+      fields: prev.fields.filter((field) => field !== "tos"),
+      messages: prev.messages.filter((_, i) => prev.fields[i] !== "tos")
     }));
-    setIsTocChecked(!isTocChecked);
+    setIsToSChecked(!isToSChecked);
   };
 
   const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -132,11 +132,11 @@ function SignupForm() {
           <div className="ml-1 flex items-center space-x-2">
             <div
               className={`flex h-6 w-5 cursor-pointer items-center justify-center rounded border-2 ${
-                isTocChecked ? "bg-secondary" : ""
-              } ${error.fields.includes("toc") ? "border-error" : "border-gray-300"}`}
+                isToSChecked ? "bg-secondary" : ""
+              } ${error.fields.includes("toS") ? "border-error" : "border-gray-300"}`}
               onClick={handleCheckChange}
             >
-              {isTocChecked && (
+              {isToSChecked && (
                 <svg
                   className="size-full p-[2px] text-white"
                   viewBox="0 0 24 24"
@@ -154,7 +154,7 @@ function SignupForm() {
             <span className="w-full text-xs font-medium text-textPrimary sm:text-sm">
               En cochant cette case, j’accepte les{" "}
               <a
-                id="toc"
+                id="tos"
                 href="/cgu"
                 target="_blank"
                 rel="noopener noreferrer"
