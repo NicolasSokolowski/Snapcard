@@ -13,7 +13,7 @@ function UserLayout() {
 
   return (
     <div className="relative h-screen-dvh w-full sm:flex">
-      <div className="sticky top-0 z-10 flex w-full flex-col justify-center rounded-sm bg-tertiary shadow-right sm:z-50 sm:w-72 sm:max-w-80 md:w-80">
+      <div className="fixed top-0 z-10 flex w-full flex-col justify-center rounded-sm bg-tertiary shadow-right sm:sticky sm:z-50 sm:w-72 sm:max-w-80 md:w-80">
         <NavBar />
         <div className="sticky top-0 z-10 sm:hidden">
           <SearchBar setItemsList={setItemsList} />
@@ -24,7 +24,9 @@ function UserLayout() {
           <div className="sticky top-0 z-10 hidden sm:block">
             <SearchBar setItemsList={setItemsList} />
           </div>
-          <Outlet context={{ itemsList, setItemsList }} />
+          <div className="mt-28 sm:mt-0">
+            <Outlet context={{ itemsList, setItemsList }} />
+          </div>
         </ScrollToTop>
       </div>
     </div>
