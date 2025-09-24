@@ -93,7 +93,7 @@ function TermsAndConditions() {
                       <br />
                       • LocalStorage stockant temporairement l’email pour
                       maintenir la session et faciliter l’accès au compte
-                      <br />- Ces données sont nécessaires au fonctionnement du
+                      <br />• Ces données sont nécessaires au fonctionnement du
                       service et ne nécessitent pas de consentement
                       supplémentaire.
                     </div>

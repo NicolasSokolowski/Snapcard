@@ -11,8 +11,8 @@ function LanguageSelector() {
   }, [language]);
 
   return (
-    <div className="flex justify-center lg:justify-start">
-      <div className="relative mb-20 flex h-16 w-80 font-patua text-xl text-textPrimary sm:w-96 lg:ml-20">
+    <>
+      <div className="relative mb-10 mt-5 flex h-16 w-full animate-pop justify-between font-patua text-xl text-textPrimary transition-all duration-300 sm:w-96">
         <div className="flex w-1/3 items-center justify-center">
           <label htmlFor="language">{t("language")}</label>
         </div>
@@ -21,14 +21,14 @@ function LanguageSelector() {
             id="language"
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
-            className="flex w-full appearance-none rounded-md bg-secondary text-center text-white shadow-custom-light focus:outline-none"
+            className="flex w-3/4 appearance-none rounded-md bg-secondary text-center text-white shadow-custom-light focus:outline-none"
           >
             <option value="en">English</option>
             <option value="fr">Français</option>
           </select>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
