@@ -9,7 +9,7 @@ i18next
   .use(LanguageDetector)
   .init({
     fallbackLng: "en",
-    ns: ["common", "home", "auth", "training", "deck", "card", "errors"],
+    ns: ["common", "home", "auth", "training", "deck", "card", "errors", "tos"],
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json"
     },
