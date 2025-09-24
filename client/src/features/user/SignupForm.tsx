@@ -128,7 +128,7 @@ function SignupForm() {
             autoComplete="off"
           />
         </div>
-        <div className="h-12 w-80">
+        <div className="h-12 w-72 sm:w-80">
           <div className="ml-1 flex items-center space-x-2">
             <div
               className={`flex h-6 w-5 cursor-pointer items-center justify-center rounded border-2 ${
@@ -151,7 +151,7 @@ function SignupForm() {
               )}
             </div>
 
-            <span className="w-full text-sm font-medium text-textPrimary">
+            <span className="w-full text-xs font-medium text-textPrimary sm:text-sm">
               En cochant cette case, j’accepte les{" "}
               <a
                 id="toc"
