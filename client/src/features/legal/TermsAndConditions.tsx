@@ -52,7 +52,37 @@ function TermsAndConditions() {
                   </div>
                   <div>
                     <div className="text-lg font-bold sm:text-xl">
-                      2. Données collectées
+                      2. Responsable du traitement
+                    </div>
+                    <div className="mt-5 text-sm sm:text-base">
+                      • Le responsable du traitement des données est : Nicolas
+                      Sokolowski
+                      <br />
+                      • Email : contact@playsnapcard.com
+                      <br />
+                      • Adresse :
+                      <br />
+                      <br />
+                      15 rue Paul Sabatier 77176
+                      <br />
+                      Savigny-le-Temple
+                      <br />
+                      FRANCE
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold sm:text-xl">
+                      3. Hébergement
+                    </div>
+                    <div className="mt-5 text-sm sm:text-base">
+                      Le site est hébergé par : OVH
+                      <br />
+                      Les données sont exclusivement stockées en Allemagne.
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold sm:text-xl">
+                      4. Données collectées
                     </div>
                     <div className="mt-5 text-sm sm:text-base">
                       Nous collectons uniquement :
@@ -69,7 +99,7 @@ function TermsAndConditions() {
                   </div>
                   <div>
                     <div className="text-lg font-bold sm:text-xl">
-                      3. Finalité des emails et données
+                      5. Finalité des emails et données
                     </div>
                     <div className="mt-5 text-sm sm:text-base">
                       Emails fonctionnels / notifications essentielles :
@@ -96,11 +126,17 @@ function TermsAndConditions() {
                       <br />• Ces données sont nécessaires au fonctionnement du
                       service et ne nécessitent pas de consentement
                       supplémentaire.
+                      <br />• Envoi des emails : L’envoi des emails est assuré
+                      via le service SMTP de Google (Gmail).
+                      <br />
+                      <br />
+                      Aucune donnée personnelle n’est transmise à des tiers,
+                      sauf si la loi l’exige.
                     </div>
                   </div>
                   <div>
                     <div className="text-lg font-bold sm:text-xl">
-                      4. Cookies
+                      6. Cookies
                     </div>
                     <div className="mt-5 text-sm sm:text-base">
                       Nous utilisons deux cookies strictement nécessaires au
@@ -134,7 +170,7 @@ function TermsAndConditions() {
                   </div>
                   <div>
                     <div className="text-lg font-bold sm:text-xl">
-                      5. Durée de conservation
+                      7. Durée de conservation
                     </div>
                     <div className="mt-5 text-sm sm:text-base">
                       • Emails fonctionnels : conservés le temps nécessaire à la
@@ -143,15 +179,13 @@ function TermsAndConditions() {
                       • Newsletter : conservés tant que vous êtes inscrit et
                       jusqu’à désinscription.
                       <br />
-                      • Cookies fonctionnels : expirent automatiquement après 1
-                      jour.
                       <br />• LocalStorage : conservés tant que la session est
                       active ou jusqu’à suppression par l’utilisateur.
                     </div>
                   </div>
                   <div>
                     <div className="text-lg font-bold sm:text-xl">
-                      6. Droits des utilisateurs
+                      8. Droits des utilisateurs
                     </div>
                     <div className="mt-5 text-sm sm:text-base">
                       Vous pouvez à tout moment :
@@ -162,6 +196,12 @@ function TermsAndConditions() {
                       • Modifier vos données personnelles
                       <br />
                       • Supprimer votre compte et vos données
+                      <br />
+                      • Demander la portabilité de vos données : export de votre
+                      adresse e-mail
+                      <br />
+                      • Opposition/limitation : uniquement possible pour les
+                      emails marketing
                       <br />
                       <p className="mt-5 text-sm sm:text-base">
                         Ces actions peuvent se faire via les fonctionnalités
@@ -181,7 +221,20 @@ function TermsAndConditions() {
                   </div>
                   <div>
                     <div className="text-lg font-bold sm:text-xl">
-                      7. Sécurité
+                      9. Utilisation par des mineurs
+                    </div>
+                    <div className="mt-5 text-sm sm:text-base">
+                      Le site est destiné à un public âgé de 15 ans et plus.
+                      <br />
+                      Les utilisateurs mineurs de moins de 15 ans doivent
+                      obtenir l’autorisation de leur représentant légal ou
+                      utiliser le service dans le cadre scolaire, sous la
+                      responsabilité de l’établissement.
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold sm:text-xl">
+                      10. Sécurité
                     </div>
                     <div className="mt-5 text-sm sm:text-base">
                       • Cookie sécurisé et localStorage pour authentification
@@ -189,16 +242,13 @@ function TermsAndConditions() {
                       • Accès aux données limité aux personnes autorisées
                       <br />
                       • Transmission des données via HTTPS
-                      <br />
-                      <p className="mt-5 text-sm sm:text-base">
-                        Les données sensibles (mots de passe) ne sont jamais
-                        stockées en clair, ni côté client ni côté serveur
-                      </p>
+                      <br />• Les données sensibles (mots de passe) ne sont
+                      stockées en clair, ni côté client ni côté serveur
                     </div>
                   </div>
                   <div>
                     <div className="text-lg font-bold sm:text-xl">
-                      8. Base légale
+                      11. Base légale
                     </div>
                     <div className="mt-5 text-sm sm:text-base">
                       Le traitement de vos données repose :
@@ -213,7 +263,18 @@ function TermsAndConditions() {
                   </div>
                   <div>
                     <div className="text-lg font-bold sm:text-xl">
-                      9. Contact
+                      12. Mise à jour de la politique
+                    </div>
+                    <div className="mt-5 text-sm sm:text-base">
+                      La présente politique peut être modifiée à tout moment.
+                      <br />
+                      En cas de changement substantiel, les utilisateurs seront
+                      notifiés par email ou via une notification sur le site.
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold sm:text-xl">
+                      13. Contact
                     </div>
                     <div className="mt-5 text-sm sm:text-base">
                       Pour toute question sur vos données personnelles ou
