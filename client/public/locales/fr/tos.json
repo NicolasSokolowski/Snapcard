@@ -1,0 +1,96 @@
+{
+  "title": "Conditions Générales d’Utilisation (CGU) et Politique de Confidentialité",
+  "purpose": {
+    "subtitle": "1. Objet",
+    "line1": "Les présentes conditions définissent l’utilisation du site playsnapcard.com et les droits et obligations des utilisateurs concernant leurs données personnelles."
+  },
+  "dataController": {
+    "subtitle": "2. Responsable du traitement",
+    "line1": "Le responsable du traitement des données est : Nicolas Sokolowski",
+    "line2": "Email : contact@playsnapcard.com",
+    "line3": "Adresse :"
+  },
+  "hosting": {
+    "subtitle": "3. Hébergement",
+    "line1": "Le site est hébergé par : OVH",
+    "line2": "Les données sont exclusivement stockées en Allemagne."
+  },
+  "data": {
+    "subtitle": "4. Données collectées",
+    "line1": "Nous collectons uniquement :",
+    "line2": "Adresse email lors de l’inscription, pour la newsletter ou via le formulaire de contact.",
+    "line3": "Cookies fonctionnels (access token et refresh token) pour sécuriser l’accès et gérer votre compte.",
+    "line4": "LocalStorage : uniquement votre adresse email pour maintenir la session et faciliter l’accès à votre compte."
+  },
+  "purposeEmailAndData": {
+    "subtitle": "5. Finalité des emails et données",
+    "line1": "Emails fonctionnels / notifications essentielles :",
+    "line2": "Modification de vos droits sur le site",
+    "line3": "Alertes importantes liées à votre compte",
+    "line4": "→ Ces emails sont nécessaires au fonctionnement du service et ne nécessitent pas de consentement supplémentaire.",
+    "line5": "Emails marketing / newsletter :",
+    "line6": "Pour recevoir la newsletter ou des informations commerciales, votre consentement explicite est requis via une case à cocher lors de l’inscription.",
+    "line7": "Vous pouvez vous désinscrire à tout moment via un lien dans chaque email.",
+    "line8": "Cookies utilisés uniquement pour l’authentification et la sécurité de votre compte",
+    "line9": "LocalStorage stockant temporairement l’email pour maintenir la session et faciliter l’accès au compte",
+    "line10": "Ces données sont nécessaires au fonctionnement du service et ne nécessitent pas de consentement supplémentaire.",
+    "line11": "Envoi des emails : L’envoi des emails est assuré via le service SMTP de Google (Gmail).",
+    "line12": "Aucune donnée personnelle n’est transmise à des tiers, sauf si la loi l’exige."
+  },
+  "cookies": {
+    "subtitle": "6. Cookies",
+    "line1": "Nous utilisons deux cookies strictement nécessaires au fonctionnement du service :",
+    "line2": "Cookie d’accès (access token) : permet de sécuriser votre session et de vérifier votre identité.",
+    "line3": "Cookie de rafraîchissement (refresh token) : permet de maintenir votre connexion sans avoir à vous réauthentifier fréquemment.",
+    "line4": "Ces cookies ne contiennent pas de données sensibles (comme vos mots de passe), mais uniquement des identifiants techniques nécessaires à la sécurité.",
+    "line5": "Durée de vie :",
+    "line6": "Cookie d’accès : 1 jour",
+    "line7": "Cookie de rafraîchissement : 7 jours",
+    "line8": "Ces cookies étant indispensables au fonctionnement du site, ils ne nécessitent pas de consentement préalable."
+  },
+  "dataRetention": {
+    "subtitle": "7. Durée de conservation",
+    "line1": "Emails fonctionnels : conservés le temps nécessaire à la gestion de votre compte ou de vos demandes.",
+    "line2": "Newsletter : conservés tant que vous êtes inscrit et jusqu’à désinscription.",
+    "line3": "LocalStorage : conservés tant que la session est active ou jusqu’à suppression par l’utilisateur."
+  },
+  "userRights": {
+    "subtitle": "8. Droits des utilisateurs",
+    "line1": "Vous pouvez à tout moment :",
+    "line2": "Accéder à vos données",
+    "line4": "Modifier vos données personnelles",
+    "line5": "Supprimer votre compte et vos données",
+    "line6": "Demander la portabilité de vos données : export de votre adresse e-mail",
+    "line7": "Opposition/limitation : uniquement possible pour les emails marketing",
+    "line8": "Ces actions peuvent se faire via les fonctionnalités mises à disposition dans votre compte.",
+    "line9": "En cas de suppression de votre compte, toutes vos données personnelles sont immédiatement supprimées de nos systèmes, à l’exception de celles que nous devons éventuellement conserver pour respecter des obligations légales (par exemple facturation ou sécurité).",
+    "line10": "Si vous rencontrez un problème ou préférez un traitement manuel, contactez-nous à : contact@playsnapcard.com."
+  },
+  "minors": {
+    "subtitle": "9. Utilisation par des mineurs",
+    "line1": "Le site est destiné à un public âgé de 15 ans et plus.",
+    "line2": "Les utilisateurs mineurs de moins de 15 ans doivent obtenir l’autorisation de leur représentant légal ou utiliser le service dans le cadre scolaire, sous la responsabilité de l’établissement."
+  },
+  "security": {
+    "subtitle": "10. Sécurité",
+    "line1": "Cookie sécurisé et localStorage pour authentification",
+    "line2": "Accès aux données limité aux personnes autorisées",
+    "line3": "Transmission des données via HTTPS",
+    "line4": "Les données sensibles (mots de passe) ne sont stockées en clair, ni côté client ni côté serveur"
+  },
+  "legalBasis": {
+    "subtitle": "11. Base légale",
+    "line1": "Le traitement de vos données repose :",
+    "line2": "sur votre consentement (par exemple inscription à la newsletter)",
+    "line3": "ou sur l’exécution du contrat et l’intérêt légitime (gestion de votre compte, authentification sécurisée, fonctionnement du site)."
+  },
+  "policyUpdates": {
+    "subtitle": "12. Mise à jour de la politique",
+    "line1": "La présente politique peut être modifiée à tout moment.",
+    "line2": "En cas de changement substantiel, les utilisateurs seront notifiés par email ou via une notification sur le site."
+  },
+  "contact": {
+    "subtitle": "13. Contact",
+    "line1": "Pour toute question sur vos données personnelles ou l’application de ces CGU, contactez-nous à : contact@playsnapcard.com."
+  }
+}

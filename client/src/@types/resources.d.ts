@@ -107,6 +107,102 @@ interface Resources {
       subtitle: "Study smarter. Remember longer. Build your own flashcard decks in seconds and practice at your own pace. Each session challenges you to recall what’s on the back of a card—then our smart system adapts the difficulty automatically. Quickly see what you’ve mastered and what still needs work, so you can focus on what matters most. Designed to make your progress clear, effective, and lasting—whether you’re preparing for exams, learning a new language, or mastering knowledge for life.";
     };
   };
+  tos: {
+    contact: {
+      line1: "For any questions regarding your personal data or the application of these Terms of Use, please contact us at: contact@playsnapcard.com";
+      subtitle: "13. Contact";
+    };
+    cookies: {
+      line1: "We use two cookies strictly necessary for the operation of the service:";
+      line2: "Access cookie (access token): secures your session and verifies your identity.";
+      line3: "Refresh cookie (refresh token): keeps you logged in without frequent reauthentication.";
+      line4: "These cookies do not contain sensitive data (such as passwords) but only technical identifiers necessary for security.";
+      line5: "Lifetime:";
+      line6: "Access cookie: 1 day";
+      line7: "Refresh cookie: 7 days";
+      line8: "As these cookies are essential for the operation of the site, they do not require prior consent.";
+      subtitle: "6. Cookies";
+    };
+    data: {
+      line1: "We only collect:";
+      line2: "Email address upon registration, for the newsletter or via the contact form.";
+      line3: "Functional cookies (access token and refresh token) to secure access and manage your account.";
+      line4: "LocalStorage: only your email address, to maintain the session and facilitate access to your account.";
+      subtitle: "4. Data Collected";
+    };
+    dataController: {
+      line1: "The data controller is: Sokolowski Nicolas";
+      line2: "Email: contact@playsnapcard.com";
+      line3: "Address:";
+      subtitle: "2. Data Controller";
+    };
+    dataRetention: {
+      line1: "Functional emails: stored for as long as necessary to manage your account or requests.";
+      line2: "Newsletter: stored while you are subscribed and until you unsubscribe.";
+      line3: "LocalStorage: stored as long as the session is active or until deleted by the user.";
+      subtitle: "7. Data Retention";
+    };
+    hosting: {
+      line1: "The website is hosted by: OVH";
+      line2: "Data is exclusively stored in Germany.";
+      subtitle: "3. Hosting";
+    };
+    legalBasis: {
+      line1: "The processing of your data is based on:";
+      line2: "Your consent (e.g., subscription to the newsletter)";
+      line3: "Or the performance of a contract and legitimate interest (account management, secure authentication, operation of the site)";
+      subtitle: "11. Legal Basis";
+    };
+    minors: {
+      line1: "The website is intended for users aged 15 and over.";
+      line2: "Users under the age of 15 must obtain the authorization of their legal representative or use the service within an educational setting, under the responsibility of their institution.";
+      subtitle: "9. Use by Minors";
+    };
+    policyUpdates: {
+      line1: "This policy may be modified at any time.";
+      line2: "In the event of a substantial change, users will be notified by email or via a notification on the site.";
+      subtitle: "12. Policy Updates";
+    };
+    purpose: {
+      line1: "These terms define the use of the website playsnapcard.com and the rights and obligations of users regarding their personal data.";
+      subtitle: "1. Purpose";
+    };
+    purposeEmailAndData: {
+      line1: "Functional emails / essential notifications:";
+      line10: "→ These data are necessary for the operation of the service and do not require additional consent.";
+      line11: "Email delivery: Emails are sent via Google’s SMTP service (Gmail).";
+      line12: "No personal data is shared with third parties, except where required by law.";
+      line2: "Modification of your rights on the website";
+      line3: "Important alerts related to your account";
+      line4: "→ These emails are necessary for the operation of the service and do not require additional consent.";
+      line5: "Marketing emails / newsletter:";
+      line6: "To receive the newsletter or commercial information, your explicit consent is required via a checkbox upon registration.";
+      line7: "You may unsubscribe at any time through a link in each email.";
+      line8: "Cookies: used only for authentication and account security.";
+      line9: "LocalStorage: temporarily stores your email to maintain the session and facilitate account access.";
+      subtitle: "5. Purpose of Emails and Data";
+    };
+    security: {
+      line1: "Secure cookies and LocalStorage for authentication";
+      line2: "Data access limited to authorized personnel";
+      line3: "Data transmission via HTTPS";
+      line4: "Sensitive data (passwords) are never stored in plain text, neither on the client side nor on the server side";
+      subtitle: "10. Security";
+    };
+    title: "Terms of Use (ToS) and Privacy Policy";
+    userRights: {
+      line1: "You may at any time:";
+      line10: "If you encounter a problem or prefer manual processing, please contact us at: contact@playsnapcard.com";
+      line2: "Access your data";
+      line4: "Modify your personal data";
+      line5: "Delete your account and your data";
+      line6: "Request portability of your data: export of your email address";
+      line7: "Object to or restrict processing: only applicable for marketing emails";
+      line8: "These actions can be carried out via the features available in your account.";
+      line9: "If you delete your account, all your personal data will be immediately removed from our systems, except for any data we may need to retain to comply with legal obligations (e.g., billing or security).";
+      subtitle: "8. User Rights";
+    };
+  };
   training: {
     buttons: {
       quit: "Quit";
