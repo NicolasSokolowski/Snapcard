@@ -20,6 +20,7 @@ export interface Card {
   back: string;
   difficulty: number;
   next_occurrence: number;
+  win_streak: number;
 }
 
 interface CardState {
