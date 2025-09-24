@@ -14,11 +14,16 @@ import "./i18n";
 import { Suspense } from "react";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from "./store/store";
+import TermsAndConditions from "./features/legal/TermsAndConditions";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
     children: [
+      {
+        path: "/cgu",
+        element: <TermsAndConditions />
+      },
       {
         path: "/",
         element: <Home />
