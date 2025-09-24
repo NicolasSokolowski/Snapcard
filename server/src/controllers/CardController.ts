@@ -37,7 +37,7 @@ export class CardController extends CoreController<
     }
 
     const responseCards = cards.map((card) => {
-      const { created_at, updated_at, max_early, win_streak, ...rest } = card;
+      const { created_at, updated_at, max_early, ...rest } = card;
 
       return rest;
     });
@@ -119,7 +119,7 @@ export class CardController extends CoreController<
     }
 
     const responseCards = cards.map((card) => {
-      const { created_at, updated_at, max_early, win_streak, ...rest } = card;
+      const { created_at, updated_at, max_early, ...rest } = card;
 
       return rest;
     });
@@ -152,8 +152,7 @@ export class CardController extends CoreController<
       throw new DatabaseConnectionError();
     }
 
-    const { created_at, updated_at, max_early, win_streak, ...responseCard } =
-      createdItem;
+    const { created_at, updated_at, max_early, ...responseCard } = createdItem;
 
     res.status(201).json(responseCard);
   };
@@ -200,8 +199,7 @@ export class CardController extends CoreController<
       throw new DatabaseConnectionError();
     }
 
-    const { created_at, updated_at, max_early, win_streak, ...responseCard } =
-      updatedItem;
+    const { created_at, updated_at, max_early, ...responseCard } = updatedItem;
 
     res.status(200).json(responseCard);
   };
@@ -273,7 +271,7 @@ export class CardController extends CoreController<
     }
 
     const responseCards = updatedCards.map((card) => {
-      const { created_at, updated_at, max_early, win_streak, ...rest } = card;
+      const { created_at, updated_at, max_early, ...rest } = card;
 
       return rest;
     });
