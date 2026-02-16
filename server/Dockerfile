@@ -1,15 +1,17 @@
-FROM node:lts-alpine AS dev
+FROM node:lts-alpine AS prod
 
 WORKDIR /app
 
 COPY *.json ./
 
-RUN npm install
+RUN npm install --production
 
 COPY src src
-
 COPY index.ts ./
+
+RUN npm install
+RUN npm run build
 
 EXPOSE 3000
 
-CMD ["npm", "run", "dev"]
+CMD ["node", "dist/index.js"]
