@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "dev": "ts-node-dev index.ts",
     "build:emails": "maizzle build --config=maizzle.config.js",
     "dev:emails": "maizzle serve --config=maizzle.config.js"
