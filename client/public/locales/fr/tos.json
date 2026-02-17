@@ -22,7 +22,7 @@
     "line7": "• Cookies utilisés uniquement pour l’authentification et la sécurité de votre compte",
     "line8": "• LocalStorage stockant temporairement l’email pour maintenir la session et faciliter l’accès au compte",
     "line9": "Ces données sont nécessaires au fonctionnement du service et ne nécessitent pas de consentement supplémentaire.",
-    "line10": "Envoi des emails : L’envoi des emails est assuré via le service SMTP de Google (Gmail).",
+    "line10": "Envoi des emails : L’envoi des emails est assuré via le service SMTP de Protonmail.",
     "line11": "Aucune donnée personnelle n’est transmise à des tiers, sauf si la loi l’exige."
   },
   "cookies": {
@@ -81,7 +81,7 @@
     "subtitle": "11. Responsable du traitement",
     "line1": "• Le responsable du traitement des données est : Nicolas Sokolowski",
     "line2": "• Email : contact@playsnapcard.com",
-    "line3": "• Adresse :"
+    "line3": "• Adresse : FRANCE"
   },
   "hosting": {
     "subtitle": "12. Hébergement",
