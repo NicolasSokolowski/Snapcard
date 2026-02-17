@@ -24,7 +24,7 @@ services:
 
   server:
     build: ./server
-    command: node dist/index.js
+    command: npm run dev
     restart: always
     env_file: .env
     depends_on:
