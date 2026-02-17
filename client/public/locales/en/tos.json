@@ -22,7 +22,7 @@
     "line7": "• Cookies: used only for authentication and account security.",
     "line8": "• LocalStorage: temporarily stores your email to maintain the session and facilitate account access.",
     "line9": "These data are necessary for the operation of the service and do not require additional consent.",
-    "line10": "Email delivery: Emails are sent via Google’s SMTP service (Gmail).",
+    "line10": "Email delivery: Emails are sent via Protonmail SMTP service.",
     "line11": "No personal data is shared with third parties, except where required by law."
   },
   "cookies": {
@@ -81,7 +81,7 @@
     "subtitle": "11. Data Controller",
     "line1": "• The data controller is: Sokolowski Nicolas",
     "line2": "• Email: contact@playsnapcard.com",
-    "line3": "• Address:"
+    "line3": "• Address: FRANCE"
   },
   "hosting": {
     "subtitle": "12. Hosting",
